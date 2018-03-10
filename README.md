@@ -22,7 +22,7 @@ https://trello.com/b/JJ23EuGJ/wdi-project-3
 
 ### gitHub
 
-https://github.com/Saf3ty1nnumb3rs/MENstackApp
+https://github.com/Saf3ty1nnumb3rs/MERNapp
 
 ## Desired additions:
 
