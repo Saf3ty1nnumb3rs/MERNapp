@@ -4,7 +4,7 @@
 #### This project will be my first project utilizing a MERN stack deployed with Heroku! iCON is an app that will provide a platform for users to check out some of their favorite Cons around the country and add themselves to the attendee list of the conventions that they are attending! On each convention is a shout out page for people to share information, talk about what they are excited about, or just make some noise in anticipation of going to their favorite convention. Check out the users going to each con and see what your fellow con goers are all about.Making the rounds at DragonCon this year? Sign up on iCON and see who all is going to be marching down the streets as a Stormtrooper with you!!!!!
 
 ### App on Heroku
-
+ADD CORRECT HEROKU ON DEPLOYMENT
 https://agile-fortress-58020.herokuapp.com/
 
 ### Data Models
@@ -46,16 +46,16 @@ https://github.com/Saf3ty1nnumb3rs/MERNapp
 * Heroku
 * Full MERN stack
 
-### Favorite Bug - When editing Country object, the list of whiskies would remain on return to page as expected. While editing User object, the list of whiskies associated would be removed on return to the page which was not the desired result.
-### All processes were identical on view pages. Checking the database on Mongo revealed that the whisky objects had been deleted. This led to observing the routes - this revealed that the `favoriteWhisky` was being called when patching the User when no value was being entered for `favoriteWhisky`. This effectively eliminated all objects in the array. Simply removing the req for favorites meant the original data would persist unless being manipulated through it's proper route.
+### Favorite Bug:
 
-### Overall, this process was fairly smooth. I prepared for this project by setting up a database and project folder for practice before the start date. That put my mind in a place where I was familiar with the task and ready to go deep into organizing and defining my requirements and workflow.
+### Thoughts On Process:
+## thoughts go here
 
-## Takeaways
+## Takeaways:
 
-### I found that spending more time on user stories, data objects, and wireframes set me up for success. Where previously I would do minimal planning and dive in, this go around I spent more time setting up and polishing. Very little time was required coding the project due to a much improved planning process. I truly recognize the value of user stories and thorough planning and design - it's changed the entire experience and given me a great appreciation for the ENTIRE process.
+### takeaway 1
 
-### Routing is making sense. Although the interactions on this app are simple, it has opened the door for limitless possibilites as we add on more techniques and tools to add multiple nuances and layers to object relationships. I've learned quite a bit, but I am much more aware of how much there is to learn.
+### takeaway 2
 
 ##### Hamburger button (hamburgers.css) is the work of Jon Suh and used with permission. The MIT License (MIT) Copyright (c) 2016 Jonathan Suh <hello@jonsuh.com> (jonsuh.com) 
 ##### All additional styling and associated javascript is the work of the author (Josh Sample) 
