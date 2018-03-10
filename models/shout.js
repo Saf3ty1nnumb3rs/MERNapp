@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const shoutSchema = require('../db/schemas/commentSchema')
+const shoutSchema = require('../db/schemas/shoutSchema')
 
 const Shout = mongoose.model('shout', shoutSchema)
 

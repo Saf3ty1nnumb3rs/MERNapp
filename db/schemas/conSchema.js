@@ -7,9 +7,10 @@ const shoutSchema = require('./shoutSchema')
 
 
 const conSchema = new Schema ({
+    name: String,
     theme: String,
     location: String,
-    date: Number,
+    date: String,
     img: String,
     users:[userSchema],
     shouts:[shoutSchema]

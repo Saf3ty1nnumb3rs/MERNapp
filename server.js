@@ -23,6 +23,7 @@ db.on('open', () => {
 app.use(logger('dev'))
 app.use(bodyParser.json())
 
+
 app.get('/', (req, res) => {
     res.send('Hey, Howdy')
 })
@@ -32,3 +33,5 @@ const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log('App is up and running on port' + PORT)
 })
+
+module.exports = app
