@@ -9,12 +9,12 @@ https://agile-fortress-58020.herokuapp.com/
 
 ### Data Models
 
-![ERDs](https://github.com/Saf3ty1nnumb3rs/MENstackApp/blob/master/project_items/ERD.JPG)
+![ERDs](https://github.com/Saf3ty1nnumb3rs/MERNapp/blob/master/ProjectMaterials/erd.JPG)
 
 
 ### Wireframes
 
-![Wireframe](https://github.com/Saf3ty1nnumb3rs/MENstackApp/blob/master/project_items/wireframe_project2.JPG)
+![Wireframe](https://github.com/Saf3ty1nnumb3rs/MERNapp/blob/master/ProjectMaterials/wireframe.JPG)
 
 ### Trello Workflow
 
