@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const commentSchema = new Schema ({
+const shoutSchema = new Schema ({
 
 })
 
-module.exports = commentSchema
+module.exports = shoutSchema
