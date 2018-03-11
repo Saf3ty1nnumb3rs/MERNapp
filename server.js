@@ -35,6 +35,11 @@ app.use('/cons', conController)
 app.use('/cons/:consId/users', userController)
 app.use('/cons/:consId/shouts', shoutController)
 
+app.use(express.static(`${__dirname}/client/build`))
+app.get('/*', (req, res) => {
+    res.sendFile(`${__dirname}/client/build/index.html`)
+  })
+
 
 const PORT = process.env.PORT || 3001
 
