@@ -24,9 +24,17 @@ app.use(logger('dev'))
 app.use(bodyParser.json())
 
 
-app.get('/', (req, res) => {
-    res.send('Hey, Howdy')
-})
+
+const index = require('./controllers/index')
+const conController = require('./controllers/conController')
+const shoutController = require('./controllers/shoutController')
+const userController = require('./controllers/userController')
+
+app.use('/', index)
+app.use('/cons', conController)
+app.use('/cons/:consId/users', userController)
+app.use('/cons/:consId/shouts', shoutController)
+
 
 const PORT = process.env.PORT || 3001
 
