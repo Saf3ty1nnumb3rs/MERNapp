@@ -6,7 +6,7 @@ const router = express.Router({
 const Con = require('../models/con')
 const Shout = require('../models/shout')
 
-
+//SHOUT Index ---------------------//////
 router.get('/', (req, res) => {
     Con.findById(req.params.consId)
     .then((cons) => {
