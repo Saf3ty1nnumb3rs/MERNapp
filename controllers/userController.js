@@ -45,9 +45,20 @@ router.post("/", (req, res) => {
       cons.users.push(newUser);
       return cons.save();
     })
-    .then((savedCon) => {
-        res.send(savedCon)
+    .then(savedCon => {
+      res.send(savedCon);
     });
 });
+
+//User delete ---------------------/////////
+router.delete("/:id", (req, res) => {
+    Con.findById(req.params.consId)
+    .then((cons) => {
+        cons.users.id(req.params.id).remove()
+        return cons.save()
+    }).then((savedCon) => {
+        res.send(savedCon)
+    })
+})
 
 module.exports = router;
