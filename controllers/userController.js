@@ -19,8 +19,6 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   Con.findById(req.params.consId)
     .then(cons => {
-      console.log("hi");
-      console.log(cons);
       const user = cons.users.id(req.params.id);
 
       res.json(user);
@@ -50,15 +48,35 @@ router.post("/", (req, res) => {
     });
 });
 
+//USER Update ---------------------/////////
+router.patch("/:id", (req, res) => {
+  Con.findById(req.params.consId)
+    .then(cons => {
+      const user = cons.users.id(req.params.id);
+
+      (user.name = req.body.name),
+        (user.img = req.body.img),
+        (user.userSince = req.body.userSince),
+        (user.favCon = req.body.favCon),
+        (user.about = req.body.about);
+
+      return cons.save();
+    })
+    .then(updatedCon => {
+      res.json(updatedCon);
+    });
+});
+
 //User delete ---------------------/////////
 router.delete("/:id", (req, res) => {
-    Con.findById(req.params.consId)
-    .then((cons) => {
-        cons.users.id(req.params.id).remove()
-        return cons.save()
-    }).then((savedCon) => {
-        res.send(savedCon)
+  Con.findById(req.params.consId)
+    .then(cons => {
+      cons.users.id(req.params.id).remove();
+      return cons.save();
     })
-})
+    .then(savedCon => {
+      res.send(savedCon);
+    });
+});
 
 module.exports = router;
