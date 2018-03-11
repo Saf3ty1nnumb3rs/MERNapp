@@ -32,6 +32,21 @@ router.post("/", (req, res) => {
     });
 });
 
+//SHOUT Update ---------------------///////
+router.patch("/:id", (req, res) => {
+    Con.findById(req.params.consId)
+    .then((cons) => {
+        const shout = cons.shouts.id(req.params.id)
+        
+        shout.subject = req.body.subject,
+        shout.msg = req.body.msg
+        
+        return cons.save()
+    }).then((updatedCon) => {
+        res.json(updatedCon)
+    })
+})      
+
 //SHOUT delete---------------------////////
 router.delete("/:id", (req,res) => {
     Con.findById(req.params.consId)
@@ -42,4 +57,4 @@ router.delete("/:id", (req,res) => {
         res.send(savedCon)
     })
 })
-module.exports = router;
+module.exports = router
