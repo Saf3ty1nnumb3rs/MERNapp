@@ -17,12 +17,10 @@ Heroku</a>
 ![Wireframe](https://github.com/Saf3ty1nnumb3rs/MERNapp/blob/master/ProjectMaterials/wireframe.JPG)
 
 ### Trello Workflow
-
-https://trello.com/b/JJ23EuGJ/wdi-project-3
+<a name="Trello" href="https://trello.com/b/JJ23EuGJ/wdi-project-3">Trello</a>
 
 ### gitHub
-
-https://github.com/Saf3ty1nnumb3rs/MERNapp
+<a name="git" href="https://github.com/Saf3ty1nnumb3rs/MERNapp">gitHub</a>
 
 ## Desired additions:
 
@@ -43,6 +41,7 @@ https://github.com/Saf3ty1nnumb3rs/MERNapp
 * ExpressJS
 * ReactJS
 * NodeJS
+* Semantic UI for React
 * Heroku
 * Full MERN stack
 
