@@ -99,7 +99,7 @@ const dragon = new Con ({
     theme: 'Cosplay, Comic, and Sci-Fi Convention',
     location: 'Atlanta, GA',
     date: 'March 14, 2018',
-    img: 'String',
+    img: 'http://starwarsblog.starwars.com/wp-content/uploads/2016/09/dragon-con-star-wars06-1536x864-344411054858.jpg',
     users:[sara, murph, cam],
     shouts:[shout3, shout8]
 })
@@ -108,7 +108,7 @@ const momo = new Con ({
     theme: 'ANIME, GAMING, COMICS + ANIMATION',
     location: 'Atlanta, GA',
     date: 'May 24, 2018',
-    img: 'String',
+    img: 'https://19qvmv3zk6hd3q6e0f17ikwm-wpengine.netdna-ssl.com/wp-content/uploads/2013/12/momoconb-picture-1-1024x767.png',
     users:[sara],
     shouts:[shout1, shout2]
 })
@@ -117,7 +117,7 @@ const furry = new Con ({
     theme: 'Anthropomorphics',
     location: 'Atlanta, GA',
     date: 'April 5, 2018',
-    img: 'String',
+    img: 'http://www.furryweekend.com/wp-content/uploads/2015/02/slide4.jpg',
     users:[sara, pikachu],
     shouts:[shout7, shout2]
 })
@@ -126,7 +126,7 @@ const meat = new Con ({
     theme: 'Meat',
     location: 'Murph\'s House',
     date: 'Every Day 2018',
-    img: 'String',
+    img: 'https://www.seriouseats.com/images/20111108-beef-texas-chili-con-carne-04.jpg',
     users:[murph, pikachu, sara],
     shouts:[shout4, shout5]
 })
@@ -135,7 +135,7 @@ const tech = new Con ({
     theme: 'America\'s fastest growing tech conference',
     location: 'New Orleans, LA',
     date: 'April 30, 2018',
-    img: 'String',
+    img: 'http://www.venturefuel.net/wp-content/uploads/2017/05/Collision.jpg',
     users:[cam, murph, sara],
     shouts:[shout6]
 })
