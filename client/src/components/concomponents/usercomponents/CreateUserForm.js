@@ -28,12 +28,10 @@ class CreateUserForm extends Component {
       about: this.state.about
     }
     //2. Add user using passed down function
-    const consId = this.props.match.params.id;
-    await axios.post(`cons/${consId}/users`, payload);
+   
+    await axios.post(`${this.props.consId}/users`, payload);
     await this.props.getAllUsers();
-    console.log(event.currentTarget);
-    //3. Reset form
-    event.currentTarget.reset();
+   
   };
 
   render() {
@@ -48,7 +46,7 @@ class CreateUserForm extends Component {
         />
         <input
           onChange={this.handleChange}
-          name="image"
+          name="img"
           type="text"
           placeholder="Image"
           value={this.state.image}
@@ -62,15 +60,16 @@ class CreateUserForm extends Component {
         />
         <input
           name="favCon"
-          ref={this.handleChange}
+          onChange={this.handleChange}
           type="text"
           placeholder="Favorite Con"
           value={this.state.favCon}
         />
         <textarea
           name="about"
-          onChnage={this.handleChange}
+          onChange={this.handleChange}
           placeholder="About"
+          type="text"
           value={this.state.about}        
         />
 

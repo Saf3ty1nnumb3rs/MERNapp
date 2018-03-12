@@ -4,12 +4,16 @@ import ShoutListComponent from "./shoutcomponents/ShoutListComponent";
 import UserListComponent from "./usercomponents/UserListComponent";
 import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
+import CreateShoutForm from "./shoutcomponents/CreateShoutForm"
+
+
 
 class SingleConView extends Component {
   state = {
     con: {},
     users: [],
-    shouts: []
+    shouts: [],
+    showAddUser: false
   };
 
   // WILL MOUNT --------------------->
@@ -47,7 +51,9 @@ class SingleConView extends Component {
     this.setState({ shouts: res.data });
   };
 
-
+  toggleShowAddUser = () => {
+    this.setState({ showAddUser: !this.state.showAddUser });
+  };
 
   render() {
     return (
@@ -55,9 +61,22 @@ class SingleConView extends Component {
         <h1>Hi!</h1>
 
         <ConComponent con={this.state.con} />
-        <UserListComponent users={this.state.users} />
+
+        {this.state.showAddUser ? (
+          <CreateUserForm
+            getAllUsers={this.getAllUsers}
+            consId={this.props.match.params.id}
+          />
+        ) : (
+          <UserListComponent users={this.state.users} />
+        )}
+        <button onClick={this.toggleShowAddUser}>Create New User</button>
+
         <ShoutListComponent shouts={this.state.shouts} />
-        <CreateUserForm   />
+        <CreateShoutForm 
+          getAllShouts={this.getAllShouts}
+          consId={this.props.match.params.id}
+          />
       </div>
     );
   }
