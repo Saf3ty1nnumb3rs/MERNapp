@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ShoutComponent from "./ShoutComponent";
+import ShoutComponent from "./ShoutComponent"
+ 
 
 class ShoutListComponent extends Component {
   render() {

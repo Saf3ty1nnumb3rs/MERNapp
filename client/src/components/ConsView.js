@@ -27,7 +27,7 @@ class ConsView extends Component {
     render() {
         return (
             <div>
-               <h1>Cons yo!!!!!!!!!</h1> 
+                
                {this.state.cons.map(con => {
                    return(
                    <Link key={con._id} to={`/cons/${con._id}`} cons={this.state.cons}>
