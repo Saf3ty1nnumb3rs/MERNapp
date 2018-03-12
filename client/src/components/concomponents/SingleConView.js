@@ -4,9 +4,7 @@ import ShoutListComponent from "./shoutcomponents/ShoutListComponent";
 import UserListComponent from "./usercomponents/UserListComponent";
 import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
-import CreateShoutForm from "./shoutcomponents/CreateShoutForm"
-
-
+import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
 
 class SingleConView extends Component {
   state = {
@@ -68,15 +66,19 @@ class SingleConView extends Component {
             consId={this.props.match.params.id}
           />
         ) : (
-          <UserListComponent users={this.state.users} />
+          <UserListComponent
+            getAllUsers={this.getAllUsers}
+            users={this.state.users}
+            consId={this.props.match.params.id}
+          />
         )}
         <button onClick={this.toggleShowAddUser}>Create New User</button>
 
         <ShoutListComponent shouts={this.state.shouts} />
-        <CreateShoutForm 
+        <CreateShoutForm
           getAllShouts={this.getAllShouts}
           consId={this.props.match.params.id}
-          />
+        />
       </div>
     );
   }

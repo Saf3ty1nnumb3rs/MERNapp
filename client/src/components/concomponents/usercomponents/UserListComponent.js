@@ -11,7 +11,11 @@ class UserListComponent extends Component {
         {this.props.users.map((user, i) => {
           return (
             <div key={this.props.users[i]._id}>
-              <UserComponent users={this.props.users[i]} /> 
+              <UserComponent 
+              getAllUsers={this.props.getAllUsers}
+              users={this.props.users[i]}
+              consId={this.props.consId}
+               /> 
             </div>
           );
         })}
