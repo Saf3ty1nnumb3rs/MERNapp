@@ -3,6 +3,7 @@ import axios from "axios";
 import ShoutListComponent from "./shoutcomponents/ShoutListComponent";
 import UserListComponent from "./usercomponents/UserListComponent";
 import ConComponent from "./ConComponent";
+import CreateUserForm from "./usercomponents/CreateUserForm";
 
 class SingleConView extends Component {
   state = {
@@ -46,6 +47,8 @@ class SingleConView extends Component {
     this.setState({ shouts: res.data });
   };
 
+
+
   render() {
     return (
       <div>
@@ -54,6 +57,7 @@ class SingleConView extends Component {
         <ConComponent con={this.state.con} />
         <UserListComponent users={this.state.users} />
         <ShoutListComponent shouts={this.state.shouts} />
+        <CreateUserForm   />
       </div>
     );
   }
