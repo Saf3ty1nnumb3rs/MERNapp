@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LandingPage from "./components/LandingPage";
+import SingleConView from "./components/concomponents/SingleConView"
 import ConsView from "./components/ConsView";
 import UserView from "./components/UserView";
 
@@ -13,8 +14,9 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={LandingPage} />
-          <Route path="/cons" component={ConsView} />
-          <Route path="/user" component={UserView} />
+          <Route exact path="/cons" component={ConsView} />
+          <Route exact path="/cons/:id" component={SingleConView} />
+          <Route exact path="/user" component={UserView} />
         </Switch>
       </Router>
     );
