@@ -8,6 +8,8 @@ class CreateShoutForm extends Component {
     date: `${Date.now()}`
   };
 
+
+
   handleChange = event => {
     const name = event.target.name;
     const newState = { ...this.state };
@@ -24,11 +26,12 @@ class CreateShoutForm extends Component {
       date: this.state.date,
     }
     //2. Add user using passed down function
-   
-    await axios.post(`${this.props.consId}/shouts`, payload);
+    console.log(this.props.consId)
+    await axios.post(`/cons/${this.props.consId}/shouts`, payload);
     await this.props.getAllShouts();
    
   };
+
 
   render() {
     return (

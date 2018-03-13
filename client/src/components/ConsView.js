@@ -30,7 +30,7 @@ class ConsView extends Component {
                 
                {this.state.cons.map(con => {
                    return(
-                   <Link key={con._id} to={`/cons/${con._id}`} cons={this.state.cons}>
+                   <Link key={con._id} to={`/cons/${con._id}`} con={this.state.cons}>
                    <h3>{con.name}</h3>
                    <img src={con.img} alt={con.name}/>
                    </Link>

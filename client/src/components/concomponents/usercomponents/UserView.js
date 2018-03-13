@@ -2,12 +2,16 @@ import React, { Component } from "react";
 import axios from "axios";
 import EditUserForm from "./EditUserForm";
 import DeleteView from "./DeleteView"
+import SingleUserComponent from './SingleUserComponent'
+
+
 
 class UserView extends Component {
   state = {
     user: {},
     showEditUser: false,
-    showDeleteView: false
+    showDeleteView: false,
+    userView: true
   };
 
   componentWillMount() {
@@ -36,21 +40,34 @@ class UserView extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const userId = this.props.match.params.id;
-    const userState = this.state;
+    const userState = this.state.user;
     axios.patch(`${userId}`, userState);
   };
 
-  toggleShowEditUser = () => {
-    this.setState({ 
-      showEditUser: !this.state.showEditUser, 
-      showDeleteView: false
-       });
-  };
+  toggleShowEditUser = async () => {
+    await this.setState({ 
+      showEditUser: !this.state.showEditUser
+    }); 
+    {this.state.showEditUser ? 
+      (
+        await this.setState({
+           showDeleteView: false,
+           userView: false
+         }) 
+      ) : (
+        await this.setState({
+          showDeleteView: false,
+          userView: true
+         })
+      )}
+    }
+    
 
   toggleDeleteUser = () => {
     this.setState({
       showEditUser: false,
-      showDeleteView: !this.state.showDeleteView
+      showDeleteView: !this.state.showDeleteView,
+      userView: false
     })
   }
 
@@ -64,15 +81,19 @@ class UserView extends Component {
             handleChange={this.handleChange}
           />
         ) : (
-          <div>
-            <h1>{this.state.user.name}</h1>
-            <img src={this.state.user.img} alt={this.state.user.name} />
-            <h2>{this.state.user.userSince}</h2>
-            <h3>{this.state.user.favCon}</h3>
-            <h4>{this.state.user.about}</h4>
-          </div>
-        )}
-        {this.state.showDeleteUser ? (
+          null
+          )}
+
+          {this.state.userView ? (
+          <SingleUserComponent 
+          user={this.state.user}
+          />
+          ) : (
+            null
+          )}
+            
+
+        {this.state.showDeleteView ? (
           <DeleteView 
           user={this.state.user}
           /> ) : (

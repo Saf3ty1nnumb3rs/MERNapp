@@ -10,15 +10,22 @@ class EditUserForm extends Component {
         
     
 
+changeState = () => {
+    console.log('Did it')
+    this.setState({
+        updated: !this.state.updated
+    })
 
+}
 
 
 
 
   render() {
-    if (this.state.updated === "true") {
-        const consId = this.props.match.params.consId
-        return (<Redirect to={`/cons/${consId}`} />)
+    if (this.state.updated === true) {
+        // const consId = this.props.match.params.id
+        // return <Redirect to={`/cons/${consId}`} />
+        
     }
     return (
       <form onSubmit={this.props.handleSubmit}>
@@ -58,7 +65,7 @@ class EditUserForm extends Component {
           onChange={this.props.handleChange}
           placeholder={this.props.user.about}
         />
-        <button type="submit">
+        <button type="submit" onClick={this.props.toggleShowEditUser}>
          Edit User
         </button>
       </form>

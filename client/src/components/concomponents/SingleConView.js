@@ -28,7 +28,9 @@ class SingleConView extends Component {
           theme: res.data.theme,
           location: res.data.location,
           date: res.data.date,
-          img: res.data.img
+          img: res.data.img,
+          users: res.data.users,
+          shouts: res.data.shouts
         };
         this.setState({ con: con });
       });
