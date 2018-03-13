@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import EditUserForm from "./EditUserForm";
+import DeleteView from "./DeleteView"
 
 class UserView extends Component {
   state = {
     user: {},
-    showEditUser: false
+    showEditUser: false,
+    showDeleteView: false
   };
 
   componentWillMount() {
@@ -39,8 +41,18 @@ class UserView extends Component {
   };
 
   toggleShowEditUser = () => {
-    this.setState({ showEditUser: !this.state.showEditUser });
+    this.setState({ 
+      showEditUser: !this.state.showEditUser, 
+      showDeleteView: false
+       });
   };
+
+  toggleDeleteUser = () => {
+    this.setState({
+      showEditUser: false,
+      showDeleteView: !this.state.showDeleteView
+    })
+  }
 
   render() {
     return (
@@ -60,7 +72,14 @@ class UserView extends Component {
             <h4>{this.state.user.about}</h4>
           </div>
         )}
+        {this.state.showDeleteUser ? (
+          <DeleteView 
+          user={this.state.user}
+          /> ) : (
+          null
+        )}
         <button onClick={this.toggleShowEditUser}>Edit</button>
+        <button onClick={this.toggleDeleteUser}>Delete</button>
       </div>
     );
   }

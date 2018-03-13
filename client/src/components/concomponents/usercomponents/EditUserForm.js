@@ -58,7 +58,7 @@ class EditUserForm extends Component {
           onChange={this.props.handleChange}
           placeholder={this.props.user.about}
         />
-        <button >
+        <button type="submit">
          Edit User
         </button>
       </form>
