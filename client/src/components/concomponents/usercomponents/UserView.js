@@ -24,6 +24,19 @@ class UserView extends Component {
       });
     }
   }
+  handleChange = event => {
+    const name = event.target.name;
+    const newState = { ...this.state.user };
+    newState[name] = event.target.value;
+    this.setState({user: newState});
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    const userId = this.props.match.params.id;
+    const userState = this.state;
+    axios.patch(`${userId}`, userState);
+  };
 
   toggleShowEditUser = () => {
     this.setState({ showEditUser: !this.state.showEditUser });
@@ -33,7 +46,11 @@ class UserView extends Component {
     return (
       <div>
         {this.state.showEditUser ? (
-          <EditUserForm user={this.state.user} />
+          <EditUserForm
+            user={this.state.user}
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+          />
         ) : (
           <div>
             <h1>{this.state.user.name}</h1>
@@ -44,7 +61,6 @@ class UserView extends Component {
           </div>
         )}
         <button onClick={this.toggleShowEditUser}>Edit</button>
-        
       </div>
     );
   }
