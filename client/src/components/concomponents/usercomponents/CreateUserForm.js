@@ -28,8 +28,9 @@ class CreateUserForm extends Component {
       about: this.state.about
     }
     //2. Add user using passed down function
-   
+    console.log(this.props.consId)
     await axios.post(`${this.props.consId}/users`, payload);
+    
     await this.props.getAllUsers();
    
   };

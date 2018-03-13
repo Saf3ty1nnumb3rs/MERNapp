@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import EditUserForm from "./EditUserForm";
-import DeleteView from "./DeleteView"
-import SingleUserComponent from './SingleUserComponent'
-
-
+import DeleteView from "./DeleteView";
+import SingleUserComponent from "./SingleUserComponent";
 
 class UserView extends Component {
   state = {
@@ -34,7 +32,7 @@ class UserView extends Component {
     const name = event.target.name;
     const newState = { ...this.state.user };
     newState[name] = event.target.value;
-    this.setState({user: newState});
+    this.setState({ user: newState });
   };
 
   handleSubmit = event => {
@@ -45,31 +43,38 @@ class UserView extends Component {
   };
 
   toggleShowEditUser = async () => {
-    await this.setState({ 
+    await this.setState({
       showEditUser: !this.state.showEditUser
-    }); 
-    {this.state.showEditUser ? 
-      (
-        await this.setState({
-           showDeleteView: false,
-           userView: false
-         }) 
-      ) : (
-        await this.setState({
-          showDeleteView: false,
-          userView: true
-         })
-      )}
+    });
+    {
+      this.state.showEditUser
+        ? await this.setState({
+            showDeleteView: false,
+            userView: false
+          })
+        : await this.setState({
+            showDeleteView: false,
+            userView: true
+          });
     }
-    
+  };
 
-  toggleDeleteUser = () => {
-    this.setState({
-      showEditUser: false,
-      showDeleteView: !this.state.showDeleteView,
-      userView: false
-    })
-  }
+  toggleDeleteUser = async () => {
+    await this.setState({
+      showDeleteView: !this.state.showDeleteView
+    });
+    {
+      this.state.showDeleteView
+        ? await this.setState({
+            showEditUser: false,
+            userView: false
+          })
+        : await this.setState({
+            showEditUser: false,
+            userView: true
+          });
+    }
+  };
 
   render() {
     return (
@@ -80,25 +85,13 @@ class UserView extends Component {
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}
           />
-        ) : (
-          null
-          )}
+        ) : null}
 
-          {this.state.userView ? (
-          <SingleUserComponent 
-          user={this.state.user}
-          />
-          ) : (
-            null
-          )}
-            
+        {this.state.userView ? (
+          <SingleUserComponent user={this.state.user} />
+        ) : null}
 
-        {this.state.showDeleteView ? (
-          <DeleteView 
-          user={this.state.user}
-          /> ) : (
-          null
-        )}
+        {this.state.showDeleteView ? <DeleteView user={this.state.user} /> : null}
         <button onClick={this.toggleShowEditUser}>Edit</button>
         <button onClick={this.toggleDeleteUser}>Delete</button>
       </div>
