@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/cons" component={ConsView} />
           <Route exact path="/cons/:id" component={SingleConView} />
-          <Route exact path="/cons/:consId/user/:id" component={UserView} />
+          <Route exact path="/cons/:consId/users/:id" component={UserView} />
         </Switch>
       </Router>
     );
