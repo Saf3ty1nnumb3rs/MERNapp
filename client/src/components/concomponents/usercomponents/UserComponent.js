@@ -12,7 +12,6 @@ class UserComponent extends Component {
         <h4>Since:{this.props.users.userSince}</h4>
         <h4>Fav Con:{this.props.users.favCon}</h4>
         <h4>About Me:{this.props.users.about}</h4>
-        <button onClick={this.removeUser}>X</button>
       </div>
     );
   }

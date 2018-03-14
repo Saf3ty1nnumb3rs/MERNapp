@@ -83,6 +83,7 @@ class SingleConView extends Component {
           shouts={this.state.shouts}
           cons={this.props.cons}
           consId={this.state.con._id}
+          getAllShouts={this.getAllShouts}
         />
         <CreateShoutForm
           getAllShouts={this.getAllShouts}
