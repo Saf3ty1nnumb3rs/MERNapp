@@ -21,7 +21,7 @@ class SingleConView extends Component {
 
     if (this.props.match.params) {
       const consId = this.props.match.params.id;
-      axios.get(`/cons/${consId}`).then(res => {
+      axios.get(`/api/cons/${consId}`).then(res => {
         // const con = {
         //   _id: res.data._id,
         //   name: res.data.name,
@@ -41,19 +41,32 @@ class SingleConView extends Component {
 
   getAllUsers = async () => {
     const consId = this.props.match.params.id;
-    const res = await axios.get(`/cons/${consId}/users`);
+    const res = await axios.get(`/api/cons/${consId}/users`);
     this.setState({ users: res.data });
   };
 
   getAllShouts = async () => {
     const consId = this.props.match.params.id;
-    const res = await axios.get(`/cons/${consId}/shouts`);
+    const res = await axios.get(`/api/cons/${consId}/shouts`);
     this.setState({ shouts: res.data });
   };
 
   toggleShowAddUser = () => {
     this.setState({ showAddUser: !this.state.showAddUser });
   };
+
+  handleShoutChange = (event, id) => {
+    console.log(id)
+    const newShouts = [ ...this.state.shouts ]
+    console.log(newShouts)
+    const shoutToChange = newShouts.find(shout => shout._id === id)
+    shoutToChange[ event.target.name ] = event.target.value
+
+    this.setState({ shouts: newShouts })
+  }
+
+
+
 
   render() {
     return (
@@ -84,6 +97,7 @@ class SingleConView extends Component {
           cons={this.props.cons}
           consId={this.state.con._id}
           getAllShouts={this.getAllShouts}
+          handleShoutChange={this.handleShoutChange}
         />
         <CreateShoutForm
           getAllShouts={this.getAllShouts}

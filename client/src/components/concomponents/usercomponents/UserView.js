@@ -3,9 +3,13 @@ import axios from "axios";
 import EditUserForm from "./EditUserForm";
 import DeleteView from "./DeleteView";
 import SingleUserComponent from "./SingleUserComponent";
+import { withRouter } from 'react-router-dom'
+
+
 
 class UserView extends Component {
-  state = {
+ 
+   state = {
     user: {},
     users: [],
     showEditUser: false,
@@ -16,7 +20,7 @@ class UserView extends Component {
   componentWillMount() {
     if (this.props.match.params) {
       const userId = this.props.match.params.id;
-      axios.get(`${userId}`).then(res => {
+      axios.get(`/api/cons/${this.props.match.params.consId}/users/${userId}`).then(res => {
         const user = {
           name: res.data.name,
           img: res.data.img,
@@ -30,14 +34,19 @@ class UserView extends Component {
     }
   }
 
+  handleClick = () => {
+
+    this.props.history.goBack(`cons/${this.props.match.params.consId}`)
+  }
+
   removeUser = async user => {
-    await axios.delete(`${this.props.match.params.id}`);
+    await axios.delete(`/api/cons/${this.props.match.params.consId}/users/${this.props.match.params.id}`);
     await this.getAllUsers();
   };
 
   getAllUsers = async () => {
     const consId = this.props.match.params.id;
-    const res = await axios.get(`/cons/${consId}/users`);
+    const res = await axios.get(`/api/cons/${consId}/users`);
     this.setState({ users: res.data });
   };
   
@@ -52,15 +61,23 @@ class UserView extends Component {
     event.preventDefault();
     const userId = this.props.match.params.id;
     const userState = this.state.user;
-    await axios.patch(`${userId}`, userState);
-    {this.toggleShowEditUser()}
+    await axios.patch(`/api/cons/${userId}`, userState);
+    this.toggleShowEditUser()
   };
+
+  toggleUser = () => {
+    this.setState({
+      showEditUser: false,
+      showDeleteView: false,
+      userView: true
+    })
+  }
 
   toggleShowEditUser = async () => {
     await this.setState({
       showEditUser: !this.state.showEditUser
     });
-    {
+    
       this.state.showEditUser
         ? await this.setState({
             showDeleteView: false,
@@ -70,14 +87,14 @@ class UserView extends Component {
             showDeleteView: false,
             userView: true
           });
-    }
+    
   };
 
   toggleDeleteUser = async () => {
     await this.setState({
       showDeleteView: !this.state.showDeleteView
     });
-    {
+    
       this.state.showDeleteView
         ? await this.setState({
             showEditUser: false,
@@ -87,10 +104,11 @@ class UserView extends Component {
             showEditUser: false,
             userView: true
           });
-    }
+    
   };
 
   render() {
+
     return (
       <div>
         {this.state.showEditUser ? (
@@ -115,9 +133,11 @@ class UserView extends Component {
         ) : null}
         <button onClick={this.toggleShowEditUser}>Edit</button>
         <button onClick={this.toggleDeleteUser}>Delete</button>
+        <button onClick={this.toggleUser}>User</button>
+        <button onClick={this.handleClick}>Convention</button>
       </div>
     );
   }
 }
 
-export default UserView;
+export default withRouter(UserView);

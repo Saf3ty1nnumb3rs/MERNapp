@@ -31,9 +31,9 @@ const shoutController = require('./controllers/shoutController')
 const userController = require('./controllers/userController')
 
 app.use('/', index)
-app.use('/cons', conController)
-app.use('/cons/:consId/users', userController)
-app.use('/cons/:consId/shouts', shoutController)
+app.use('/api/cons', conController)
+app.use('/api/cons/:consId/users', userController)
+app.use('/api/cons/:consId/shouts', shoutController)
 
 app.use(express.static(`${__dirname}/client/build`))
 app.get('/*', (req, res) => {

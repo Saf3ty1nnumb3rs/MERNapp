@@ -27,8 +27,10 @@ class CreateShoutForm extends Component {
     }
     //2. Add user using passed down function
     console.log(this.props.consId)
-    await axios.post(`/cons/${this.props.consId}/shouts`, payload);
+    await axios.post(`api/cons/${this.props.consId}/shouts`, payload);
     await this.props.getAllShouts();
+    this.setState( {subject:'', msg: ''} )
+    
    
   };
 
@@ -41,6 +43,7 @@ class CreateShoutForm extends Component {
           onChange={this.handleChange}
           type="text"
           placeholder="Subject"
+          value={this.state.subject}
         />
         <textarea
           name="msg"

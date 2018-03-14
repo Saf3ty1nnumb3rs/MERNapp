@@ -1,22 +1,10 @@
 import React, { Component } from "react";
 
 class EditUserForm extends Component {
-  state = {
-    updated: false
-  };
-
-  changeState = () => {
-    console.log("Did it");
-    this.setState({
-      updated: !this.state.updated
-    });
-  };
+  
 
   render() {
-    if (this.state.updated === true) {
-      // const consId = this.props.match.params.id
-      // return <Redirect to={`/cons/${consId}`} />
-    }
+   
     return (
       <form onSubmit={this.props.handleSubmit}>
         <input

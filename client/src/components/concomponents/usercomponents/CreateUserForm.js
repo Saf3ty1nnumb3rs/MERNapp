@@ -29,7 +29,7 @@ class CreateUserForm extends Component {
     }
     //2. Add user using passed down function
     console.log(this.props.consId)
-    await axios.post(`${this.props.consId}/users`, payload);
+    await axios.post(`/api/cons/${this.props.consId}/users`, payload);
     await this.props.toggleShowAddUser()
     await this.props.getAllUsers();
    
