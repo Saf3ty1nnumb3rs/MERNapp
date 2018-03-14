@@ -66,6 +66,7 @@ class SingleConView extends Component {
           <CreateUserForm
             getAllUsers={this.getAllUsers}
             cons={this.props.cons}
+            toggleShowAddUser={this.toggleShowAddUser}
             consId={this.state.con._id}
           />
         ) : (

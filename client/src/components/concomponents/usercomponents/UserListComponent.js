@@ -7,7 +7,7 @@ class UserListComponent extends Component {
     return (
       <div>
         {this.props.users.map((user, i) => {
-          console.log({user})
+          console.log({ user });
           return (
             <Link
               to={`/cons/${this.props.consId}/users/${user._id}`}
