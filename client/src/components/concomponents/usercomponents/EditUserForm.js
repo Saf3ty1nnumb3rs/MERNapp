@@ -1,31 +1,21 @@
 import React, { Component } from "react";
-import { Redirect } from 'react-router-dom'
 
 class EditUserForm extends Component {
+  state = {
+    updated: false
+  };
 
-        state = {
-            updated: false
-        }
-    
-        
-    
-
-changeState = () => {
-    console.log('Did it')
+  changeState = () => {
+    console.log("Did it");
     this.setState({
-        updated: !this.state.updated
-    })
-
-}
-
-
-
+      updated: !this.state.updated
+    });
+  };
 
   render() {
     if (this.state.updated === true) {
-        // const consId = this.props.match.params.id
-        // return <Redirect to={`/cons/${consId}`} />
-        
+      // const consId = this.props.match.params.id
+      // return <Redirect to={`/cons/${consId}`} />
     }
     return (
       <form onSubmit={this.props.handleSubmit}>
@@ -50,7 +40,7 @@ changeState = () => {
           onChange={this.props.handleChange}
           placeholder={this.props.user.userSince}
         />
-        
+
         <input
           name="favCon"
           value={this.props.user.favCon}
@@ -66,7 +56,7 @@ changeState = () => {
           placeholder={this.props.user.about}
         />
         <button type="submit" onClick={this.props.toggleShowEditUser}>
-         Edit User
+          Edit User
         </button>
       </form>
     );

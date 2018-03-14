@@ -22,17 +22,17 @@ class SingleConView extends Component {
     if (this.props.match.params) {
       const consId = this.props.match.params.id;
       axios.get(`/cons/${consId}`).then(res => {
-        const con = {
-          _id: res.data._id,
-          name: res.data.name,
-          theme: res.data.theme,
-          location: res.data.location,
-          date: res.data.date,
-          img: res.data.img,
-          users: res.data.users,
-          shouts: res.data.shouts
-        };
-        this.setState({ con: con });
+        // const con = {
+        //   _id: res.data._id,
+        //   name: res.data.name,
+        //   theme: res.data.theme,
+        //   location: res.data.location,
+        //   date: res.data.date,
+        //   img: res.data.img,
+        //   users: res.data.users,
+        //   shouts: res.data.shouts
+        // };
+        this.setState({ con:res.data });
       });
     }
   }
@@ -55,8 +55,6 @@ class SingleConView extends Component {
     this.setState({ showAddUser: !this.state.showAddUser });
   };
 
-  
-
   render() {
     return (
       <div>
@@ -67,21 +65,28 @@ class SingleConView extends Component {
         {this.state.showAddUser ? (
           <CreateUserForm
             getAllUsers={this.getAllUsers}
-            consId={this.props.match.params.id}
+            cons={this.props.cons}
+            consId={this.state.con._id}
           />
         ) : (
           <UserListComponent
             getAllUsers={this.getAllUsers}
             users={this.state.users}
-            consId={this.props.match.params.id}
+            cons={this.props.cons}
+            consId={this.state.con._id}
           />
         )}
         <button onClick={this.toggleShowAddUser}>Create New User</button>
-    
-        <ShoutListComponent shouts={this.state.shouts} />
+
+        <ShoutListComponent
+          shouts={this.state.shouts}
+          cons={this.props.cons}
+          consId={this.state.con._id}
+        />
         <CreateShoutForm
           getAllShouts={this.getAllShouts}
-          consId={this.props.match.params.id}
+          cons={this.props.cons}
+          consId={this.state.con._id}
         />
       </div>
     );

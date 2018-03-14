@@ -7,6 +7,7 @@ import SingleUserComponent from "./SingleUserComponent";
 class UserView extends Component {
   state = {
     user: {},
+    users: [],
     showEditUser: false,
     showDeleteView: false,
     userView: true
@@ -28,6 +29,18 @@ class UserView extends Component {
       });
     }
   }
+
+  removeUser = async user => {
+    await axios.delete(`${this.props.match.params.id}`);
+    await this.getAllUsers();
+  };
+
+  getAllUsers = async () => {
+    const consId = this.props.match.params.id;
+    const res = await axios.get(`/cons/${consId}/users`);
+    this.setState({ users: res.data });
+  };
+  
   handleChange = event => {
     const name = event.target.name;
     const newState = { ...this.state.user };
@@ -35,11 +48,12 @@ class UserView extends Component {
     this.setState({ user: newState });
   };
 
-  handleSubmit = event => {
+  handleSubmit = async (event) => {
     event.preventDefault();
     const userId = this.props.match.params.id;
     const userState = this.state.user;
-    axios.patch(`${userId}`, userState);
+    await axios.patch(`${userId}`, userState);
+    {this.toggleShowEditUser()}
   };
 
   toggleShowEditUser = async () => {
@@ -77,6 +91,7 @@ class UserView extends Component {
   };
 
   render() {
+    console.log(this.props)
     return (
       <div>
         {this.state.showEditUser ? (
@@ -91,7 +106,14 @@ class UserView extends Component {
           <SingleUserComponent user={this.state.user} />
         ) : null}
 
-        {this.state.showDeleteView ? <DeleteView user={this.state.user} /> : null}
+        {this.state.showDeleteView ? (
+          <DeleteView
+            user={this.state.user}
+            removeUser={this.removeUser}
+            toggleDeleteUser={this.toggleDeleteUser}
+            cons={this.props.cons}
+          />
+        ) : null}
         <button onClick={this.toggleShowEditUser}>Edit</button>
         <button onClick={this.toggleDeleteUser}>Delete</button>
       </div>
