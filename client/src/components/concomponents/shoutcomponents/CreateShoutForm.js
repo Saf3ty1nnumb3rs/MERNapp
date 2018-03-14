@@ -27,7 +27,7 @@ class CreateShoutForm extends Component {
     }
     //2. Add user using passed down function
     console.log(this.props.consId)
-    await axios.post(`api/cons/${this.props.consId}/shouts`, payload);
+    await axios.post(`/api/cons/${this.props.consId}/shouts`, payload);
     await this.props.getAllShouts();
     this.setState( {subject:'', msg: ''} )
     

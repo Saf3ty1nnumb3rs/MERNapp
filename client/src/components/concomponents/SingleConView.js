@@ -60,6 +60,7 @@ class SingleConView extends Component {
     const newShouts = [ ...this.state.shouts ]
     console.log(newShouts)
     const shoutToChange = newShouts.find(shout => shout._id === id)
+    console.log(shoutToChange)
     shoutToChange[ event.target.name ] = event.target.value
 
     this.setState({ shouts: newShouts })

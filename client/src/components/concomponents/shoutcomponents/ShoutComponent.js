@@ -5,36 +5,33 @@ class ShoutComponent extends Component {
 
 
   removeShout = async user => {
-    await axios.delete(`/api/${this.props.consId}/shouts/${this.props.shouts._id}`);
+    await axios.delete(`/api/cons/${this.props.consId}/shouts/${this.props.shouts._id}`);
     await this.props.getAllShouts();
   };
   handleChange = event => {
     this.props.handleShoutChange(event, this.props.shouts._id);
   };
-  updateShout = shout => {
-    axios
-      .patch(`/api/cons/${this.props.consId}/shouts/${this.props.shouts._id}`, shout)
-      .then(res => {
+  updateShout = async (shout) => {
+    await axios.patch(`/api/cons/${this.props.consId}/shouts/${this.props.shouts._id}`, shout)
+      await (res => {
           this.props.getAllShouts();
       });
   };
 
   render() {
-    console.log(this.props.index);
-    console.log(this.props.shouts._id);
-    console.log("hi");
+    
     return (
       <div>
         <br />
         <input
           type="text"
-          name="title"
+          name="subject"
           value={this.props.shouts.subject}
           onChange={this.handleChange}
           onBlur={() => this.updateShout(this.props.shouts)}
         />
         <textarea
-          name="description"
+          name="msg"
           value={this.props.shouts.msg}
           onChange={this.handleChange}
           onBlur={() => this.updateShout(this.props.shouts)}

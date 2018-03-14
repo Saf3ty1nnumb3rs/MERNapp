@@ -59,9 +59,9 @@ class UserView extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const userId = this.props.match.params.id;
+    const consId = this.props.match.params.consId;
     const userState = this.state.user;
-    await axios.patch(`/api/cons/${userId}`, userState);
+    await axios.patch(`/api/cons/${consId}/users/${this.props.match.params.id}`, userState);
     this.toggleShowEditUser()
   };
 
