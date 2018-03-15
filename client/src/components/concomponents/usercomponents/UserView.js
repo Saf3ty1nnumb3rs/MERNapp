@@ -3,13 +3,10 @@ import axios from "axios";
 import EditUserForm from "./EditUserForm";
 import DeleteView from "./DeleteView";
 import SingleUserComponent from "./SingleUserComponent";
-import { withRouter } from 'react-router-dom'
-
-
+import { withRouter } from "react-router-dom";
 
 class UserView extends Component {
- 
-   state = {
+  state = {
     user: {},
     users: [],
     showEditUser: false,
@@ -20,27 +17,24 @@ class UserView extends Component {
   componentWillMount() {
     if (this.props.match.params) {
       const userId = this.props.match.params.id;
-      axios.get(`/api/cons/${this.props.match.params.consId}/users/${userId}`).then(res => {
-        const user = {
-          name: res.data.name,
-          img: res.data.img,
-          userSince: res.data.userSince,
-          favCon: res.data.favCon,
-          about: res.data.about
-        };
-        console.log({ user });
-        this.setState({ user });
-      });
+      axios
+        .get(`/api/cons/${this.props.match.params.consId}/users/${userId}`)
+        .then(res => {
+          this.setState({ user: res.data });
+        });
     }
   }
 
   handleClick = () => {
-
-    this.props.history.goBack(`cons/${this.props.match.params.consId}`)
-  }
+    this.props.history.goBack(`cons/${this.props.match.params.consId}`);
+  };
 
   removeUser = async user => {
-    await axios.delete(`/api/cons/${this.props.match.params.consId}/users/${this.props.match.params.id}`);
+    await axios.delete(
+      `/api/cons/${this.props.match.params.consId}/users/${
+        this.props.match.params.id
+      }`
+    );
     await this.getAllUsers();
   };
 
@@ -49,7 +43,7 @@ class UserView extends Component {
     const res = await axios.get(`/api/cons/${consId}/users`);
     this.setState({ users: res.data });
   };
-  
+
   handleChange = event => {
     const name = event.target.name;
     const newState = { ...this.state.user };
@@ -57,12 +51,15 @@ class UserView extends Component {
     this.setState({ user: newState });
   };
 
-  handleSubmit = async (event) => {
+  handleSubmit = async event => {
     event.preventDefault();
     const consId = this.props.match.params.consId;
     const userState = this.state.user;
-    await axios.patch(`/api/cons/${consId}/users/${this.props.match.params.id}`, userState);
-    this.toggleShowEditUser()
+    await axios.patch(
+      `/api/cons/${consId}/users/${this.props.match.params.id}`,
+      userState
+    );
+    this.toggleShowEditUser();
   };
 
   toggleUser = () => {
@@ -70,45 +67,42 @@ class UserView extends Component {
       showEditUser: false,
       showDeleteView: false,
       userView: true
-    })
-  }
+    });
+  };
 
   toggleShowEditUser = async () => {
     await this.setState({
       showEditUser: !this.state.showEditUser
     });
-    
-      this.state.showEditUser
-        ? await this.setState({
-            showDeleteView: false,
-            userView: false
-          })
-        : await this.setState({
-            showDeleteView: false,
-            userView: true
-          });
-    
+
+    this.state.showEditUser
+      ? await this.setState({
+          showDeleteView: false,
+          userView: false
+        })
+      : await this.setState({
+          showDeleteView: false,
+          userView: true
+        });
   };
 
   toggleDeleteUser = async () => {
     await this.setState({
       showDeleteView: !this.state.showDeleteView
     });
-    
-      this.state.showDeleteView
-        ? await this.setState({
-            showEditUser: false,
-            userView: false
-          })
-        : await this.setState({
-            showEditUser: false,
-            userView: true
-          });
-    
+
+    this.state.showDeleteView
+      ? await this.setState({
+          showEditUser: false,
+          userView: false
+        })
+      : await this.setState({
+          showEditUser: false,
+          userView: true
+        });
   };
 
   render() {
-
     return (
       <div>
         {this.state.showEditUser ? (

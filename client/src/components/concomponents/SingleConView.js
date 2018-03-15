@@ -24,16 +24,6 @@ class SingleConView extends Component {
     if (this.props.match.params) {
       const consId = this.props.match.params.id;
       axios.get(`/api/cons/${consId}`).then(res => {
-        // const con = {
-        //   _id: res.data._id,
-        //   name: res.data.name,
-        //   theme: res.data.theme,
-        //   location: res.data.location,
-        //   date: res.data.date,
-        //   img: res.data.img,
-        //   users: res.data.users,
-        //   shouts: res.data.shouts
-        // };
         this.setState({ con:res.data });
       });
     }
