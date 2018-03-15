@@ -5,6 +5,8 @@ import UserListComponent from "./usercomponents/UserListComponent";
 import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
 import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
+import Navbar from "../Navbar"
+
 
 class SingleConView extends Component {
   state = {
@@ -72,6 +74,7 @@ class SingleConView extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <h1>Hi!</h1>
 
         <ConComponent con={this.state.con} />

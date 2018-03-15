@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-
+import Navbar from './Navbar'
 
 
 class ConsView extends Component {
@@ -27,7 +27,7 @@ class ConsView extends Component {
     render() {
         return (
             <div>
-                
+                <Navbar />
                {this.state.cons.map(con => {
                    return(
                    <Link key={con._id} to={`/cons/${con._id}`} cons={this.state.cons}>
