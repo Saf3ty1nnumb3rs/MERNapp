@@ -1,24 +1,28 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'
-
+import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
+import { Button, Card, Container } from "semantic-ui-react";
 class DeleteView extends Component {
-  
-    handleClick = () => {
-    
-        this.props.removeUser()
-        this.props.history.goBack(`cons/${this.props.match.params.consId}`)
+  handleClick = () => {
+    this.props.removeUser();
+    this.props.history.goBack(`cons/${this.props.match.params.consId}`);
+  };
 
-    }
-
-    render() {
-        return (
-            <div>
-         <h1>Are you sure you want to delete </h1> 
-         <button onClick={this.handleClick}>Yes</button>      
-         <button onClick={this.props.toggleDeleteUser}>No</button>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <Container text>
+        <Card>
+          <h1>Are you sure you want to delete ?</h1>
+          </Card>
+          <Button color="red" onClick={this.handleClick}>
+            Delete
+          </Button>
+          <Button color="green" onClick={this.props.toggleDeleteUser}>
+            Return
+          </Button>
+        
+      </Container>
+    );
+  }
 }
 
-export default withRouter(DeleteView)
+export default withRouter(DeleteView);

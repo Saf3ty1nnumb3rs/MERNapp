@@ -4,6 +4,7 @@ import EditUserForm from "./EditUserForm";
 import DeleteView from "./DeleteView";
 import SingleUserComponent from "./SingleUserComponent";
 import { withRouter } from "react-router-dom";
+import { Button, Card, Image } from "semantic-ui-react";
 
 class UserView extends Component {
   state = {
@@ -125,10 +126,12 @@ class UserView extends Component {
             cons={this.props.cons}
           />
         ) : null}
-        <button onClick={this.toggleShowEditUser}>Edit</button>
-        <button onClick={this.toggleDeleteUser}>Delete</button>
-        <button onClick={this.toggleUser}>User</button>
-        <button onClick={this.handleClick}>Convention</button>
+        <Button.Group>
+          <Button primary onClick={this.toggleShowEditUser}>Edit</Button>
+          <Button color="red" onClick={this.toggleDeleteUser}>Delete</Button>
+          <Button color="green" onClick={this.toggleUser}>User</Button>
+          <Button onClick={this.handleClick}>Convention</Button>
+        </Button.Group>
       </div>
     );
   }

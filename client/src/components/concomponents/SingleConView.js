@@ -5,8 +5,8 @@ import UserListComponent from "./usercomponents/UserListComponent";
 import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
 import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
-import Navbar from "../Navbar"
-
+import Navbar from "../Navbar";
+import { Grid, Button } from "semantic-ui-react";
 
 class SingleConView extends Component {
   state = {
@@ -24,7 +24,7 @@ class SingleConView extends Component {
     if (this.props.match.params) {
       const consId = this.props.match.params.id;
       axios.get(`/api/cons/${consId}`).then(res => {
-        this.setState({ con:res.data });
+        this.setState({ con: res.data });
       });
     }
   }
@@ -48,18 +48,15 @@ class SingleConView extends Component {
   };
 
   handleShoutChange = (event, id) => {
-    console.log(id)
-    const newShouts = [ ...this.state.shouts ]
-    console.log(newShouts)
-    const shoutToChange = newShouts.find(shout => shout._id === id)
-    console.log(shoutToChange)
-    shoutToChange[ event.target.name ] = event.target.value
+    console.log(id);
+    const newShouts = [...this.state.shouts];
+    console.log(newShouts);
+    const shoutToChange = newShouts.find(shout => shout._id === id);
+    console.log(shoutToChange);
+    shoutToChange[event.target.name] = event.target.value;
 
-    this.setState({ shouts: newShouts })
-  }
-
-
-
+    this.setState({ shouts: newShouts });
+  };
 
   render() {
     return (
@@ -68,36 +65,44 @@ class SingleConView extends Component {
         <h1>Hi!</h1>
 
         <ConComponent con={this.state.con} />
+        <Grid>
+          {this.state.showAddUser ? (
+            <Grid.Column width={6}>
+              <CreateUserForm
+                getAllUsers={this.getAllUsers}
+                cons={this.props.cons}
+                toggleShowAddUser={this.toggleShowAddUser}
+                consId={this.state.con._id}
+              />
+              <Button onClick={this.toggleShowAddUser}>Create New User</Button>
+            </Grid.Column>
+          ) : (
+            <Grid.Column width={6}>
+              <UserListComponent
+                getAllUsers={this.getAllUsers}
+                users={this.state.users}
+                cons={this.props.cons}
+                consId={this.state.con._id}
+              />
+              <Button onClick={this.toggleShowAddUser}>Create New User</Button>
+            </Grid.Column>
+          )}
 
-        {this.state.showAddUser ? (
-          <CreateUserForm
-            getAllUsers={this.getAllUsers}
-            cons={this.props.cons}
-            toggleShowAddUser={this.toggleShowAddUser}
-            consId={this.state.con._id}
-          />
-        ) : (
-          <UserListComponent
-            getAllUsers={this.getAllUsers}
-            users={this.state.users}
-            cons={this.props.cons}
-            consId={this.state.con._id}
-          />
-        )}
-        <button onClick={this.toggleShowAddUser}>Create New User</button>
-
-        <ShoutListComponent
-          shouts={this.state.shouts}
-          cons={this.props.cons}
-          consId={this.state.con._id}
-          getAllShouts={this.getAllShouts}
-          handleShoutChange={this.handleShoutChange}
-        />
-        <CreateShoutForm
-          getAllShouts={this.getAllShouts}
-          cons={this.props.cons}
-          consId={this.state.con._id}
-        />
+          <Grid.Column width={6}>
+            <ShoutListComponent
+              shouts={this.state.shouts}
+              cons={this.props.cons}
+              consId={this.state.con._id}
+              getAllShouts={this.getAllShouts}
+              handleShoutChange={this.handleShoutChange}
+            />
+            <CreateShoutForm
+              getAllShouts={this.getAllShouts}
+              cons={this.props.cons}
+              consId={this.state.con._id}
+            />
+          </Grid.Column>
+        </Grid>
       </div>
     );
   }

@@ -1,27 +1,27 @@
 import React, { Component } from "react";
-
+import { Form, Button, Input } from "semantic-ui-react"
 class EditUserForm extends Component {
   
 
   render() {
    
     return (
-      <form onSubmit={this.props.handleSubmit}>
-        <input
+      <Form onSubmit={this.props.handleSubmit}>
+        <Input
           name="name"
           value={this.props.user.name}
           type="text"
           onChange={this.props.handleChange}
           placeholder={this.props.user.name}
         />
-        <input
+        <Input
           name="img"
           value={this.props.user.img}
           type="text"
           onChange={this.props.handleChange}
           placeholder={this.props.user.img}
         />
-        <input
+        <Input
           name="userSince"
           value={this.props.user.userSince}
           type="text"
@@ -29,24 +29,24 @@ class EditUserForm extends Component {
           placeholder={this.props.user.userSince}
         />
 
-        <input
+        <Input
           name="favCon"
           value={this.props.user.favCon}
           type="text"
           onChange={this.props.handleChange}
           placeholder={this.props.user.favCon}
         />
-        <input
+        <Input
           name="about"
           value={this.props.user.about}
           type="text"
           onChange={this.props.handleChange}
           placeholder={this.props.user.about}
         />
-        <button type="submit" onClick={this.props.toggleShowEditUser}>
+        <Button type="submit" onClick={this.props.toggleShowEditUser}>
           Edit User
-        </button>
-      </form>
+        </Button>
+      </Form>
     );
   }
 }

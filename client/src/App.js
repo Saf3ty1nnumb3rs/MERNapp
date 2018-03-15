@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import axios from "axios"
-
+import { injectGlobal} from 'styled-components'
 
 import LandingPage from "./components/LandingPage";
 import SingleConView from "./components/concomponents/SingleConView"
@@ -9,6 +9,12 @@ import ConsView from "./components/ConsView";
 import UserView from "./components/concomponents/usercomponents/UserView";
 
 import "./App.css";
+
+
+injectGlobal`
+// import
+
+`
 
 class App extends Component {
   state = {
