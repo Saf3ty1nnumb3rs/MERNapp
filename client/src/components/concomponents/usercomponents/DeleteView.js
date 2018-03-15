@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Button, Card, Container } from "semantic-ui-react";
+import { Button, Card, Container, Grid, Icon } from "semantic-ui-react";
 class DeleteView extends Component {
   handleClick = () => {
     this.props.removeUser();
@@ -9,17 +9,28 @@ class DeleteView extends Component {
 
   render() {
     return (
-      <Container text>
+      <Container text textAlign="center">
         <Card>
           <h1>Are you sure you want to delete ?</h1>
-          </Card>
-          <Button color="red" onClick={this.handleClick}>
-            Delete
-          </Button>
-          <Button color="green" onClick={this.props.toggleDeleteUser}>
-            Return
-          </Button>
-        
+          <Button.Group>
+            <Button animated color="red" onClick={this.handleClick}>
+              <Button.Content visible>Delete</Button.Content>
+              <Button.Content hidden>
+                <Icon name="ban" />
+              </Button.Content>
+            </Button>
+            <Button
+              animated
+              color="green"
+              onClick={this.props.toggleDeleteUser}
+            >
+              <Button.Content visible>Return</Button.Content>
+              <Button.Content hidden>
+                <Icon name="user" />
+              </Button.Content>
+            </Button>
+          </Button.Group>
+        </Card>
       </Container>
     );
   }

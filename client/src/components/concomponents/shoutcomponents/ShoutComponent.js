@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Input, Button, TextArea, Form } from "semantic-ui-react";
+
+
+
 class ShoutComponent extends Component {
+
+
+  
   removeShout = async user => {
     await axios.delete(
       `/api/cons/${this.props.consId}/shouts/${this.props.shouts._id}`
