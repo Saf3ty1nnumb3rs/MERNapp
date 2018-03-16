@@ -15,7 +15,7 @@ class EditUserForm extends Component {
     return (
       <FormWrap>
         <Container text textAlign="center">
-          <Segment inverted color="orange">
+          <Segment inverted>
             <Form onSubmit={this.props.handleSubmit}>
               <Segment.Group>
                 <Segment inverted>

@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 const ButtonWrap = styled.div`
   margin: 22px;
+  width: 100%;
 `;
 
 const UserWrap = styled.div`

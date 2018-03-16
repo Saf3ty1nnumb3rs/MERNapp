@@ -99,7 +99,7 @@ const dragon = new Con ({
     theme: 'Cosplay, Comic, and Sci-Fi Convention',
     location: 'Atlanta, GA',
     date: 'March 14, 2018',
-    img: 'http://starwarsblog.starwars.com/wp-content/uploads/2016/09/dragon-con-star-wars06-1536x864-344411054858.jpg',
+    img: 'https://pbs.twimg.com/profile_images/948443217481076736/DwJIudRD_400x400.jpg',
     users:[sara, murph, cam],
     shouts:[shout3, shout8]
 })
@@ -117,7 +117,7 @@ const furry = new Con ({
     theme: 'Anthropomorphics',
     location: 'Atlanta, GA',
     date: 'April 5, 2018',
-    img: 'http://www.furryweekend.com/wp-content/uploads/2015/02/slide4.jpg',
+    img: 'https://upload.wikimedia.org/wikipedia/commons/8/8e/Furry_Weekend_Atlanta_fursuiters.jpg',
     users:[sara, pikachu],
     shouts:[shout7, shout2]
 })
@@ -135,7 +135,7 @@ const tech = new Con ({
     theme: 'America\'s fastest growing tech conference',
     location: 'New Orleans, LA',
     date: 'April 30, 2018',
-    img: 'http://www.venturefuel.net/wp-content/uploads/2017/05/Collision.jpg',
+    img: 'https://collisionconf.com/wp-content/uploads/2016/04/collision-scholarship.jpg',
     users:[cam, murph, sara],
     shouts:[shout6]
 })
