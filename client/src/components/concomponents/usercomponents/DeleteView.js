@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Button, Card, Container, Grid, Icon } from "semantic-ui-react";
+import { Button, Card, Container, Icon } from "semantic-ui-react";
 class DeleteView extends Component {
   handleClick = () => {
     this.props.removeUser();

@@ -6,28 +6,31 @@ import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
 import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
 import Navbar from "../Navbar";
-import { Grid, Button, Segment, Icon } from "semantic-ui-react";
+import { Grid, Button, Segment, Icon, Container } from "semantic-ui-react";
 import styled from "styled-components";
 
 const BodyWrapper = styled.div``;
 
 const ConWrapper = styled.div`
-  height: 75vh;
+  height: 40vw;
   margin-left: 10px;
+  margin-top: 140px;
 `;
 
 const ScrollWrapper = styled.div`
-  height: 75vh;
+  height: 73vh;
   overflow-y: auto;
+  margin-top: 120px;
 `;
 const ScrollShout = styled.div`
-  height: 75vh;
+  height: 73vh;
   overflow-y: auto;
 `;
 
 const ShoutWrapper = styled.div`
-  height: 75vh;
+  height: 73vh;
   margin-right: 10px;
+  margin-top: 120px;
 `;
 
 class SingleConView extends Component {
@@ -66,8 +69,6 @@ class SingleConView extends Component {
     this.setState({ shouts: res.data });
   };
 
-
-
   toggleShowAddUser = () => {
     this.setState({ showAddUser: !this.state.showAddUser });
   };
@@ -75,7 +76,6 @@ class SingleConView extends Component {
   toggleShowShout = () => {
     this.setState({ showShout: !this.state.showShout });
   };
-
 
   handleShoutChange = (event, id) => {
     console.log(id);
@@ -87,22 +87,26 @@ class SingleConView extends Component {
     this.setState({ shouts: newShouts });
   };
 
-
-
   render() {
     return (
       <BodyWrapper>
         <Navbar />
-        <Grid stackable verticalAlign="middle" columns={3}>
-          <Grid.Column width={5}>
-            <Segment raised>
+        <Grid centered stacking="true" verticalAlign="middle" columns={3}>
+          <Grid.Column centered computer={5} tablet={12} mobile={16}>
+            <Container centered>
               <ConWrapper>
                 <ConComponent con={this.state.con} />
               </ConWrapper>
-            </Segment>
+            </Container>
+            <Button animated onClick={this.toggleShowAddUser}>
+              <Button.Content visible>Sign Up</Button.Content>
+              <Button.Content hidden>
+                <Icon name="add user" />
+              </Button.Content>
+            </Button>
           </Grid.Column>
           {this.state.showAddUser ? (
-            <Grid.Column width={5}>
+            <Grid.Column centered computer={5} tablet={12} mobile={16}>
               <Segment raised>
                 <CreateUserForm
                   getAllUsers={this.getAllUsers}
@@ -119,36 +123,26 @@ class SingleConView extends Component {
               </Button>
             </Grid.Column>
           ) : (
-            <Grid.Column width={5}>
-              <Segment>
-                <ScrollWrapper>
-                  <UserListComponent
-                    getAllUsers={this.getAllUsers}
-                    users={this.state.users}
-                    cons={this.props.cons}
-                    consId={this.state.con._id}
-                  />
-                </ScrollWrapper>
-              </Segment>
-
-              <Button animated onClick={this.toggleShowAddUser}>
-                <Button.Content visible>Sign Up</Button.Content>
-                <Button.Content hidden>
-                  <Icon name="add user" />
-                </Button.Content>
-              </Button>
+            <Grid.Column centered computer={5} tablet={12} mobile={16}>
+              <ScrollWrapper>
+                <UserListComponent
+                  getAllUsers={this.getAllUsers}
+                  users={this.state.users}
+                  cons={this.props.cons}
+                  consId={this.state.con._id}
+                />
+              </ScrollWrapper>
             </Grid.Column>
           )}
 
           {this.state.showShout ? (
-            <Grid.Column width={6}>
+            <Grid.Column centered computer={6} tablet={12} mobile={16}>
               <Segment raised>
                 <h1>Shout It Out!!!</h1>
                 <CreateShoutForm
                   getAllShouts={this.getAllShouts}
                   cons={this.props.cons}
                   consId={this.state.con._id}
-
                 />
               </Segment>
               <Button animated onClick={this.toggleShowShout}>
@@ -159,24 +153,24 @@ class SingleConView extends Component {
               </Button>
             </Grid.Column>
           ) : (
-            <Grid.Column width={6}>
+            <Grid.Column computer={6} tablet={12} mobile={16}>
               <Segment>
-              <ShoutWrapper>
-                <ScrollShout>
-                  <ShoutListComponent
-                    shouts={this.state.shouts}
-                    cons={this.props.cons}
-                    consId={this.state.con._id}
-                    getAllShouts={this.getAllShouts}
-                    handleShoutChange={this.handleShoutChange}
-                  />
-                </ScrollShout>
-              </ShoutWrapper>
+                <ShoutWrapper>
+                  <ScrollShout>
+                    <ShoutListComponent
+                      shouts={this.state.shouts}
+                      cons={this.props.cons}
+                      consId={this.state.con._id}
+                      getAllShouts={this.getAllShouts}
+                      handleShoutChange={this.handleShoutChange}
+                    />
+                  </ScrollShout>
+                </ShoutWrapper>
               </Segment>
               <Button animated onClick={this.toggleShowShout}>
                 <Button.Content visible>Shout!</Button.Content>
                 <Button.Content hidden>
-                  <Icon name="comments"/>
+                  <Icon name="comments" />
                 </Button.Content>
               </Button>
             </Grid.Column>

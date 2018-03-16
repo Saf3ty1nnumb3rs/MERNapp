@@ -10,10 +10,10 @@ class EditUserForm extends Component {
   render() {
     return (
       <Container text textAlign="center">
-        <Segment>
+        <Segment inverted>
           <Form onSubmit={this.props.handleSubmit}>
             <Segment.Group>
-              <Segment>
+              <Segment inverted>
                 <Input
                   name="name"
                   value={this.props.user.name}

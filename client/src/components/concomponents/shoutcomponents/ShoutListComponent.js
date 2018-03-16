@@ -14,7 +14,6 @@ class ShoutListComponent extends Component {
       <Container>
         <Segment>
           {this.props.shouts.map((shout, i) => {
-            console.log(this.props.shouts[i]._id);
             return (
               <Container key={this.props.shouts[i]._id}>
                 <ShoutComponent

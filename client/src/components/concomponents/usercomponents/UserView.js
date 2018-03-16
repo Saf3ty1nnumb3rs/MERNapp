@@ -61,9 +61,10 @@ class UserView extends Component {
       `/api/cons/${consId}/users/${this.props.match.params.id}`,
       userState
     );
+    await this.toggleShowEditUser();
     console.log('We all in here')
-    await this.getAllUsers();
-   await this.toggleShowEditUser();
+    await (res => {this.getAllUsers()})
+   
   };
 
   toggleUser = () => {

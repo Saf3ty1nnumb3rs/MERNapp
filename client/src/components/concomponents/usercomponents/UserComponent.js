@@ -2,34 +2,48 @@ import React, { Component } from "react";
 import { Image, Container, Segment } from "semantic-ui-react";
 import styled from "styled-components";
 
+
+
+const UserWrap = styled.div`
+margin-top: 5px;
+`;
+
 const ImageWrapper = styled.div`
-  min-width: 200px;
+  min-width: 190px;
   max-width: 400px;
   height: auto;
-  Image {
-    border-radius: 50%;
+  img {
+    border-radius: 5px;
+    box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
   }
 `;
 
 class UserComponent extends Component {
   render() {
     return (
-      <Segment>
+      <UserWrap>
         <Container key={this.props.key}>
           <h3>{this.props.users.name}</h3>
           <ImageWrapper>
-            <Image
-              src={this.props.users.img}
-              alt={this.props.users.name}
-            />
+            <Image src={this.props.users.img} alt={this.props.users.name} />
           </ImageWrapper>
-          <Segment>
-            <h4>Since:{this.props.users.userSince}</h4>
-            <h4>Fav Con:{this.props.users.favCon}</h4>
-            <h4>About Me:{this.props.users.about}</h4>
+          <Segment raised>
+            <h3>
+              <span>Since:</span>
+              {this.props.users.userSince}
+            </h3>
+            <h3>
+              <span>Fav Con:</span>
+              {this.props.users.favCon}
+            </h3>
+            <h3>
+              <span>About Me:</span>
+              {this.props.users.about}
+            </h3>
           </Segment>
         </Container>
-      </Segment>
+      </UserWrap>
     );
   }
 }
