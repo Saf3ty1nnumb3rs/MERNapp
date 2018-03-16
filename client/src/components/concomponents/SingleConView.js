@@ -145,6 +145,7 @@ class SingleConView extends Component {
                   getAllShouts={this.getAllShouts}
                   cons={this.props.cons}
                   consId={this.state.con._id}
+                  toggleShowShout={this.toggleShowShout}
                 />
               </Segment>
               <Button animated onClick={this.toggleShowShout}>
