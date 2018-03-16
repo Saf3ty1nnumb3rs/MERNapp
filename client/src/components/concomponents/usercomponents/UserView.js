@@ -5,8 +5,18 @@ import DeleteView from "./DeleteView";
 import Navbar from "../../Navbar";
 import SingleUserComponent from "./SingleUserComponent";
 import { withRouter } from "react-router-dom";
-import { Button, Segment, Icon } from "semantic-ui-react";
+import { Button, Segment, Icon, Container, Grid } from "semantic-ui-react";
+import styled from "styled-components";
 
+const ButtonWrap = styled.div`
+  margin: 22px;
+`;
+
+const UserWrap = styled.div`
+
+margin-top: 100px;
+
+`
 class UserView extends Component {
   state = {
     user: {},
@@ -62,9 +72,10 @@ class UserView extends Component {
       userState
     );
     await this.toggleShowEditUser();
-    console.log('We all in here')
-    await (res => {this.getAllUsers()})
-   
+    console.log("We all in here");
+    await (res => {
+      this.getAllUsers();
+    });
   };
 
   toggleUser = () => {
@@ -109,7 +120,7 @@ class UserView extends Component {
 
   render() {
     return (
-      <div>
+      <Grid centered>
         <Navbar />
         {this.state.showEditUser ? (
           <EditUserForm
@@ -121,9 +132,11 @@ class UserView extends Component {
         ) : null}
 
         {this.state.userView ? (
-          <Segment>
-            <SingleUserComponent user={this.state.user} />
-          </Segment>
+          <UserWrap>
+            <Segment>
+              <SingleUserComponent user={this.state.user} />
+            </Segment>
+          </UserWrap>
         ) : null}
 
         {this.state.showDeleteView ? (
@@ -134,34 +147,35 @@ class UserView extends Component {
             cons={this.props.cons}
           />
         ) : null}
-
-        <Button.Group>
-          <Button animated primary onClick={this.toggleShowEditUser}>
-          <Button.Content visible>Edit</Button.Content>
-            <Button.Content hidden>
-              <Icon name="edit" />
-            </Button.Content>
-          </Button>
-          <Button animated color="red" onClick={this.toggleDeleteUser}>
-            <Button.Content visible>Delete</Button.Content>
-            <Button.Content hidden>
-              <Icon name="ban" />
-            </Button.Content>
-          </Button>
-          <Button animated color="green" onClick={this.toggleUser}>
-          <Button.Content visible>User</Button.Content>
+        <ButtonWrap>
+          <Button.Group>
+            <Button animated primary onClick={this.toggleShowEditUser}>
+              <Button.Content visible>Edit</Button.Content>
+              <Button.Content hidden>
+                <Icon name="edit" />
+              </Button.Content>
+            </Button>
+            <Button animated color="red" onClick={this.toggleDeleteUser}>
+              <Button.Content visible>Delete</Button.Content>
+              <Button.Content hidden>
+                <Icon name="ban" />
+              </Button.Content>
+            </Button>
+            <Button animated color="green" onClick={this.toggleUser}>
+              <Button.Content visible>User</Button.Content>
               <Button.Content hidden>
                 <Icon name="user" />
               </Button.Content>
-          </Button>
-          <Button animated onClick={this.handleClick}>
-          <Button.Content visible>Convention</Button.Content>
+            </Button>
+            <Button animated onClick={this.handleClick}>
+              <Button.Content visible>Convention</Button.Content>
               <Button.Content hidden>
                 <Icon name="arrow circle left" />
               </Button.Content>
-          </Button>
-        </Button.Group>
-      </div>
+            </Button>
+          </Button.Group>
+        </ButtonWrap>
+      </Grid>
     );
   }
 }

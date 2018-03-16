@@ -6,7 +6,7 @@ import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
 import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
 import Navbar from "../Navbar";
-import { Grid, Button, Segment, Icon, Container } from "semantic-ui-react";
+import { Grid, Button, Segment, Icon } from "semantic-ui-react";
 import styled from "styled-components";
 
 const BodyWrapper = styled.div``;
@@ -15,20 +15,21 @@ const ConWrapper = styled.div`
   height: 40vw;
   margin-left: 10px;
   margin-top: 140px;
+  position: relative;
 `;
 
 const ScrollWrapper = styled.div`
-  height: 73vh;
+  height: 72vh;
   overflow-y: auto;
   margin-top: 120px;
 `;
 const ScrollShout = styled.div`
-  height: 73vh;
+  height: 72vh;
   overflow-y: auto;
 `;
 
 const ShoutWrapper = styled.div`
-  height: 73vh;
+  height: 72vh;
   margin-right: 10px;
   margin-top: 120px;
 `;
@@ -93,11 +94,12 @@ class SingleConView extends Component {
         <Navbar />
         <Grid centered stacking="true" verticalAlign="middle" columns={3}>
           <Grid.Column centered computer={5} tablet={12} mobile={16}>
-            <Container centered>
-              <ConWrapper>
+            <ConWrapper>
+              <Segment>
                 <ConComponent con={this.state.con} />
-              </ConWrapper>
-            </Container>
+              </Segment>
+            </ConWrapper>
+
             <Button animated onClick={this.toggleShowAddUser}>
               <Button.Content visible>Sign Up</Button.Content>
               <Button.Content hidden>

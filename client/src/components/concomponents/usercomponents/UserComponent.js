@@ -12,10 +12,12 @@ const ImageWrapper = styled.div`
   min-width: 190px;
   max-width: 400px;
   height: auto;
+  margin: 0 auto;
   img {
     border-radius: 5px;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2);
     text-align: center;
+    
   }
 `;
 
@@ -23,7 +25,8 @@ class UserComponent extends Component {
   render() {
     return (
       <UserWrap>
-        <Container key={this.props.key}>
+        
+        <Container centered key={this.props.key}>
           <h3>{this.props.users.name}</h3>
           <ImageWrapper>
             <Image src={this.props.users.img} alt={this.props.users.name} />
