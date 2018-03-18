@@ -52,7 +52,7 @@ class ShoutComponent extends Component {
         <Button 
         color="red"
         size="mini"
-        onClick={this.removeShout}>X</Button>
+        onClick={this.removeShout}>Remove</Button>
       </Form>
     );
   }

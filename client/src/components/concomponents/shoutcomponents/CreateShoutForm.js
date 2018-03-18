@@ -53,7 +53,7 @@ class CreateShoutForm extends Component {
             value={this.state.msg}
           />
 
-          <Button type="submit">+ Add Shout</Button>
+          <Button color="green" type="submit">+ Add Shout</Button>
         </Form>
      </Container>
     );

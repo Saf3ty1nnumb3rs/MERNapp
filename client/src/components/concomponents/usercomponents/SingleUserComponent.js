@@ -13,6 +13,9 @@ const ImageWrap = styled.div`
   min-width: 120px;
   height: auto;
   margin: 8px;
+  img {
+    box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.2);
+  }
 
 `
 class SingleUserComponent extends Component {

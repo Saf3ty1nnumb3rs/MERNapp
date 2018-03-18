@@ -37,57 +37,55 @@ class CreateUserForm extends Component {
 
   render() {
     return (
-      <Segment>
-        <Form onSubmit={this.handleSubmit}>
-          <Segment.Group>
+      <Form onSubmit={this.handleSubmit}>
+        <Segment.Group>
           <Segment>
-          <Input
-            name="name"
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Name"
-          />
+            <Input
+              name="name"
+              onChange={this.handleChange}
+              type="text"
+              placeholder="Name"
+            />
           </Segment>
           <Segment>
-          <Input
-            onChange={this.handleChange}
-            name="img"
-            type="text"
-            placeholder="Image"
-            value={this.state.image}
-          />
+            <Input
+              onChange={this.handleChange}
+              name="img"
+              type="text"
+              placeholder="Image"
+              value={this.state.image}
+            />
           </Segment>
           <Segment>
-          <Input
-            name="userSince"
-            onChange={this.handleChange}
-            type="text"
-            placeholder="User Since"
-            value={this.state.userSince}
-          />
+            <Input
+              name="userSince"
+              onChange={this.handleChange}
+              type="text"
+              placeholder="User Since"
+              value={this.state.userSince}
+            />
           </Segment>
           <Segment>
-          <Input
-            name="favCon"
-            onChange={this.handleChange}
-            type="text"
-            placeholder="Favorite Con"
-            value={this.state.favCon}
-          />
+            <Input
+              name="favCon"
+              onChange={this.handleChange}
+              type="text"
+              placeholder="Favorite Con"
+              value={this.state.favCon}
+            />
           </Segment>
           <Segment>
-          <TextArea
-            name="about"
-            onChange={this.handleChange}
-            placeholder="About"
-            type="text"
-            value={this.state.about}
-          />
+            <TextArea
+              name="about"
+              onChange={this.handleChange}
+              placeholder="About"
+              type="text"
+              value={this.state.about}
+            />
           </Segment>
-      </Segment.Group>
-          <Button type="submit">+ Add User</Button>
-        </Form>
-      </Segment>
+        </Segment.Group>
+        <Button type="submit">+ Add User</Button>
+      </Form>
     );
   }
 }

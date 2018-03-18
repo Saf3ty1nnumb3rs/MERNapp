@@ -11,11 +11,11 @@ import { Container, Segment } from "semantic-ui-react";
 class ShoutListComponent extends Component {
   render() {
     return (
-      <Container>
+      
         <Segment>
           {this.props.shouts.map((shout, i) => {
             return (
-              <Container key={this.props.shouts[i]._id}>
+              <Segment key={this.props.shouts[i]._id}>
                 <ShoutComponent
                   shouts={this.props.shouts[i]}
                   index={i}
@@ -23,11 +23,11 @@ class ShoutListComponent extends Component {
                   getAllShouts={this.props.getAllShouts}
                   handleShoutChange={this.props.handleShoutChange}
                 />
-              </Container>
+              </Segment>
             );
           })}
         </Segment>
-      </Container>
+      
     );
   }
 }

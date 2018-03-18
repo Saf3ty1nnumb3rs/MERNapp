@@ -23,6 +23,9 @@ injectGlobal`
   *:after {
 	  box-sizing: border-box;
   }
+  ::-webkit-scrollbar { 
+    display: none; 
+}
   body {
     margin: 0;  
   }
