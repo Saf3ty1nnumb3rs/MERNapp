@@ -14,10 +14,19 @@ const ButtonWrap = styled.div`
 `;
 
 const UserWrap = styled.div`
+  height: 72vh;
+  margin-top: 100px;
+`;
 
-margin-top: 100px;
+const EditWrap = styled.div`
+  height: 72vh;
+  margin-top: 100px;
+`;
+const DeleteWrap = styled.div`
+  height: 72vh;
+  margin-top: 100px;
+`;
 
-`
 class UserView extends Component {
   state = {
     user: {},
@@ -124,29 +133,37 @@ class UserView extends Component {
       <Grid centered>
         <Navbar />
         {this.state.showEditUser ? (
-          <EditUserForm
-            user={this.state.user}
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-            showEditUser={this.toggleShowEditUser}
-          />
+          <EditWrap>
+            <Segment>
+              <EditUserForm
+                user={this.state.user}
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                showEditUser={this.toggleShowEditUser}
+              />
+            </Segment>
+          </EditWrap>
         ) : null}
 
         {this.state.userView ? (
           <UserWrap>
-            <Segment>
+            <Segment inverted>
               <SingleUserComponent user={this.state.user} />
             </Segment>
           </UserWrap>
         ) : null}
 
         {this.state.showDeleteView ? (
-          <DeleteView
-            user={this.state.user}
-            removeUser={this.removeUser}
-            toggleDeleteUser={this.toggleDeleteUser}
-            cons={this.props.cons}
-          />
+          <DeleteWrap>
+            <Segment inverted>
+              <DeleteView
+                user={this.state.user}
+                removeUser={this.removeUser}
+                toggleDeleteUser={this.toggleDeleteUser}
+                cons={this.props.cons}
+              />
+            </Segment>
+          </DeleteWrap>
         ) : null}
         <ButtonWrap>
           <Button.Group>

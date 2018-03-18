@@ -5,15 +5,14 @@ import styled from "styled-components"
 const MainWrap = styled.div`
 background-image: url('https://media-beta.wsbtv.com/photo/2017/09/02/Dragon%20con%20_OP_512_CP__1504374167205_9036930_ver1.0_1280_720.JPG');
 min-height: 100vh;
-min-width: 100vw;
+min-width: 120vw;
 height: auto;
 background-size: cover;
 background-repeat: no-repeat;
+position: relative;
+background-position: 30% 50%;
 height: 100%;
 margin: 0 auto;
-
-
-
 `;
 const LinkWrap = styled.div`
 h1 {

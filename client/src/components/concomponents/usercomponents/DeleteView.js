@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { Button, Card, Container, Icon, Grid } from "semantic-ui-react";
+import { Button, Card, Container, Icon, Grid, Segment } from "semantic-ui-react";
 import styled from "styled-components";
 
 const DeleteWrapper = styled.div`
-  margin-top: 120px;
+  margin: 120px auto;
 `;
 
 class DeleteView extends Component {
@@ -18,8 +18,9 @@ class DeleteView extends Component {
       <DeleteWrapper>
         <Container text textAlign="center">
           <Grid centered>
-            <Card>
-              <h1>Are you sure you want to delete ?</h1>
+            <Segment>
+            <Card raised>
+              <h1>Are you sure you want to delete {this.props.user.name} ?</h1>
               <Button.Group>
                 <Button animated color="red" onClick={this.handleClick}>
                   <Button.Content visible>Delete</Button.Content>
@@ -39,6 +40,7 @@ class DeleteView extends Component {
                 </Button>
               </Button.Group>
             </Card>
+            </Segment>
           </Grid>
         </Container>
       </DeleteWrapper>

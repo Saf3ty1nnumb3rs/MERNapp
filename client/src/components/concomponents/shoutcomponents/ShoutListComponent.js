@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ShoutComponent from "./ShoutComponent";
-import { Container, Segment } from "semantic-ui-react";
+import { Segment } from "semantic-ui-react";
 
 
 

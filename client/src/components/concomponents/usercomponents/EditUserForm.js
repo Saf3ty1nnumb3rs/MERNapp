@@ -5,7 +5,6 @@ import styled from "styled-components"
 
 const FormWrap = styled.div`
 
-margin-top: 120px;
 
 `
 

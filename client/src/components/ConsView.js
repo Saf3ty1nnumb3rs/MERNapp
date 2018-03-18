@@ -39,7 +39,7 @@ class ConsView extends Component {
           <Grid stackable centered>
             {this.state.cons.map(con => {
               return (
-                <Grid.Column key= {con._id + 'id'}width={3}>
+                <Grid.Column key= {con._id + 'id'}width={5}>
                   <CardWrap>
                     <Card centered>
                       <Link

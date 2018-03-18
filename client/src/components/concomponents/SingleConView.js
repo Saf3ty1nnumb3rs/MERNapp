@@ -9,7 +9,7 @@ import Navbar from "../Navbar";
 import { Grid, Button, Segment, Icon, Container } from "semantic-ui-react";
 import styled from "styled-components";
 
-const BodyWrapper = styled.div``;
+
 
 const ConWrapper = styled.div`
   height: 72 vh;
