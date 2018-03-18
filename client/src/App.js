@@ -39,7 +39,6 @@ class App extends Component {
 
   getAllCons = async () => {
     const res = await axios.get("/api/cons");
-    console.log(res.data);
     this.setState({ cons: res.data });
   };
 

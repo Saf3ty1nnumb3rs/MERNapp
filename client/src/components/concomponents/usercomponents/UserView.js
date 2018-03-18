@@ -5,7 +5,7 @@ import DeleteView from "./DeleteView";
 import Navbar from "../../Navbar";
 import SingleUserComponent from "./SingleUserComponent";
 import { withRouter } from "react-router-dom";
-import { Button, Segment, Icon, Container, Grid } from "semantic-ui-react";
+import { Button, Segment, Icon, Grid } from "semantic-ui-react";
 import styled from "styled-components";
 
 const ButtonWrap = styled.div`

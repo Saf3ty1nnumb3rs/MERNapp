@@ -28,8 +28,6 @@ Heroku</a>
 
 * ### I will be adding if statements to help populate lack of profile pictures on user profile additions. Thanks for the tip Marco!
 
-* ### Need to create dropdowns for certain form fields to make some items more uniform - i.e. Country of origin for users. I would also like to increase the database size to include more whisky producing countries and whiskies.
-
 * ### I would like to utilize user authentification in order to create an actual login to the site and restrict manipulation of other user's data.
 
 * ### Styles need to be more fluid and need a great deal of work.
@@ -48,13 +46,14 @@ Heroku</a>
 ### Favorite Bug:
 
 ### Thoughts On Process:
-## thoughts go here
+## On approach, I had spent a great deal of time forming fuctional data relationships (ERDs), wireframes, and then creating user stories with a clear definition of what was required in development and for the user experience. As our projects become more complex, the need for organization and task-based execution becomes paramount.
+## For styling, I've utilized Semantic UI for React. Although, I have a preference for raw CSS, Semantic is quite useful for quick styling execution. Although some styles from Semantic lean toward the generic, they are clean and effective. Semantic is a welcome addition to the development toolbelt.
 
 ## Takeaways:
 
-### takeaway 1
+### I find that some students collapse Express routing and React routing when building out their projects. React is built over Express but their routes are not the same. Server routes are able to deliver multiple resources to a single view through React - recognizing this enables the development of highly functional and versatile user experiences on the client side.
 
 ### takeaway 2
 
-##### Hamburger button (hamburgers.css) is the work of Jon Suh and used with permission. The MIT License (MIT) Copyright (c) 2016 Jonathan Suh <hello@jonsuh.com> (jonsuh.com) 
-##### All additional styling and associated javascript is the work of the author (Josh Sample) 
+
+##### All styling and script are the work of the author (Josh Sample) 

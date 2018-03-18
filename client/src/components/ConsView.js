@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import styled from "styled-components";
 
 const ConsWrapper = styled.div`
-  margin: 120px 15vw;
+  margin: 200px 15vw;
 `;
 
 const CardWrap = styled.div`
@@ -39,7 +39,7 @@ class ConsView extends Component {
           <Grid stackable centered>
             {this.state.cons.map(con => {
               return (
-                <Grid.Column centered width={3}>
+                <Grid.Column key= {con._id + 'id'}width={3}>
                   <CardWrap>
                     <Card centered>
                       <Link

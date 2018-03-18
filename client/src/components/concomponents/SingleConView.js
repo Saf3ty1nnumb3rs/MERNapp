@@ -19,6 +19,8 @@ const ConWrapper = styled.div`
 `;
 
 const ScrollWrapper = styled.div`
+  border-top: solid 1px grey;
+  border-bottom: solid 1px grey;
   height: 72vh;
   overflow-y: auto;
   margin-top: 120px;
@@ -93,11 +95,9 @@ class SingleConView extends Component {
       <BodyWrapper>
         <Navbar />
         <Grid centered stacking="true" verticalAlign="middle" columns={3}>
-          <Grid.Column centered computer={5} tablet={12} mobile={16}>
+          <Grid.Column computer={5} tablet={12} mobile={16}>
             <ConWrapper>
-              <Segment>
                 <ConComponent con={this.state.con} />
-              </Segment>
             </ConWrapper>
 
             <Button animated onClick={this.toggleShowAddUser}>
@@ -108,7 +108,7 @@ class SingleConView extends Component {
             </Button>
           </Grid.Column>
           {this.state.showAddUser ? (
-            <Grid.Column centered computer={5} tablet={12} mobile={16}>
+            <Grid.Column computer={5} tablet={12} mobile={16}>
               <Segment raised>
                 <CreateUserForm
                   getAllUsers={this.getAllUsers}
@@ -125,7 +125,7 @@ class SingleConView extends Component {
               </Button>
             </Grid.Column>
           ) : (
-            <Grid.Column centered computer={5} tablet={12} mobile={16}>
+            <Grid.Column computer={5} tablet={12} mobile={16}>
               <ScrollWrapper>
                 <UserListComponent
                   getAllUsers={this.getAllUsers}
@@ -138,7 +138,7 @@ class SingleConView extends Component {
           )}
 
           {this.state.showShout ? (
-            <Grid.Column centered computer={6} tablet={12} mobile={16}>
+            <Grid.Column computer={6} tablet={12} mobile={16}>
               <Segment raised>
                 <h1>Shout It Out!!!</h1>
                 <CreateShoutForm
