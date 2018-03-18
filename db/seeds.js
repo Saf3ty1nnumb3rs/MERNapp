@@ -36,7 +36,7 @@ const cam = new User ({
 })
 const sara = new User ({
     name: 'Sara',
-    img: 'http://d2rormqr1qwzpz.cloudfront.net/photos/2015/09/08/63-80412-dragoncon_2015_001-1441712389.jpg',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Hl-yCukZ2fPRXrNMZfFeEM5-lrcX30D-1natdtWPTf4m0kzqMg',
     userSince: 2018,
     favCon: 'MomoCon',
     about: 'I love Cons. Like all of them. You\'ll be there? I\'ll be there too! OMG 😄'

@@ -27,7 +27,7 @@ class ConsView extends Component {
   // FUNCTIONS ------------------------>
   getAllCons = async () => {
     const res = await axios.get("/api/cons");
-    console.log(res.data);
+
     this.setState({ cons: res.data });
   };
 
@@ -39,7 +39,7 @@ class ConsView extends Component {
           <Grid stackable centered>
             {this.state.cons.map(con => {
               return (
-                <Grid.Column key= {con._id + 'id'}width={5}>
+                <Grid.Column key={con._id + "id"} width={5}>
                   <CardWrap>
                     <Card centered>
                       <Link
@@ -47,7 +47,9 @@ class ConsView extends Component {
                         to={`/cons/${con._id}`}
                         cons={this.state.cons}
                       >
-                        <h3>{con.name}</h3>
+                        <Card.Header textAlign="center">
+                          <h3>{con.name}</h3>
+                        </Card.Header>
                         <Image fluid src={con.img} alt={con.name} />
                       </Link>
                     </Card>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from "styled-components"
 
 const MainWrap = styled.div`
-background-image: url('https://media-beta.wsbtv.com/photo/2017/09/02/Dragon%20con%20_OP_512_CP__1504374167205_9036930_ver1.0_1280_720.JPG');
+background-image: url('https://thepeachreview.files.wordpress.com/2016/10/img_0644.jpg?w=1920&h=768&crop=1');
 min-height: 100vh;
 min-width: 120vw;
 height: auto;
@@ -19,7 +19,7 @@ h1 {
     font-style: normal;
     font-weight: 400;
     font-size: 80px;
-    margin-left: 20vw;
+    margin-left: 15vw;
     color: red;
     text-shadow: 1px 1px #6790a0;
     font-family: 'Audiowide', cursive;

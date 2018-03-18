@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image, Container, Segment, Card } from "semantic-ui-react";
+import { Image, Card } from "semantic-ui-react";
 import styled from "styled-components";
 
 const UserWrap = styled.div`
