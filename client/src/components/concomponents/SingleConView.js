@@ -9,20 +9,31 @@ import Navbar from "../Navbar";
 import { Grid, Button, Segment, Icon, Container } from "semantic-ui-react";
 import styled from "styled-components";
 
-
+const PageWrap = styled.div`
+  margin: 0 auto;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
+  background-color: #E8543C;
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
 
 const ConWrapper = styled.div`
+#bgcolor {
+background-color: rgba(212,212,208,.9) ;
+}
   height: 72 vh;
   margin-left: 10px;
   margin-top: 110px;
 `;
 
 const ScrollWrapper = styled.div`
+#bgcolor {
+  background-color: rgba(212,212,208,.9);
+}
   height: 72vh;
   margin-right: 10px;
   margin-top: 110px;
-  border-top: solid 1px lightgrey;
-  border-bottom: solid 1px lightgrey;
+  
   overflow-y: auto;
 `;
 const FormWrap = styled.div`
@@ -92,7 +103,7 @@ class SingleConView extends Component {
 
   render() {
     return (
-      <div>
+      <PageWrap>
         <Navbar />
         <Grid centered padded verticalAlign="middle" stackable columns={3}>
           <Grid.Column computer={6} tablet={10} mobile={16}>
@@ -130,7 +141,7 @@ class SingleConView extends Component {
           ) : (
             <Grid.Column computer={4} tablet={8} mobile={10}>
               <ScrollWrapper>
-                <Segment>
+                <Segment id="bgcolor">
                   <UserListComponent
                     getAllUsers={this.getAllUsers}
                     users={this.state.users}
@@ -192,7 +203,7 @@ class SingleConView extends Component {
             </Grid.Column>
           )}
         </Grid>
-      </div>
+      </PageWrap>
     );
   }
 }

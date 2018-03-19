@@ -1,11 +1,18 @@
 import React, { Component } from "react";
 import UserComponent from "./UserComponent";
 import { Link } from "react-router-dom";
+import styled from "styled-components"
+
+const ListWrap = styled.div`
+background-color: rgba(212,212,208,.9) ;
+`
+
+
 
 class UserListComponent extends Component {
   render() {
     return (
-      <div>
+      <ListWrap>
         {this.props.users.map((user, i) => {
           
           return (
@@ -22,7 +29,7 @@ class UserListComponent extends Component {
             </Link>
           );
         })}
-      </div>
+      </ListWrap>
     );
   }
 }

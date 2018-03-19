@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const ImageWrap = styled.div`
   max-width: 360px;
-  margin: 0;
+  margin: 0 auto;
   img {
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.3);
   }
@@ -16,7 +16,7 @@ const ImageWrap = styled.div`
 class ConComponent extends Component {
   render() {
     return (
-      <Segment>
+      <Segment id="bgcolor">
         <Container textAlign="center">
           <h2>{this.props.con.name}</h2>
           <ImageWrap>

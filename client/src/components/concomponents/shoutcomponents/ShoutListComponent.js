@@ -12,7 +12,7 @@ class ShoutListComponent extends Component {
   render() {
     return (
       
-        <Segment>
+        <Segment id="bgcolor">
           {this.props.shouts.map((shout, i) => {
             return (
               <Segment key={this.props.shouts[i]._id}>
