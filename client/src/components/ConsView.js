@@ -5,10 +5,20 @@ import { Grid, Card, Image } from "semantic-ui-react";
 import Navbar from "./Navbar";
 import styled from "styled-components";
 
-const ConsWrapper = styled.div`
-  margin: 200px 15vw;
+const PageWrapper = styled.div`
+  margin: 0 auto;
+  background-image: url("https://dragonconeternalmembers.files.wordpress.com/2016/07/22-1-tile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 101vh;
+  width: 100vw;
 `;
 
+const ConsWrap = styled.div`
+
+padding-top: 150px;
+
+`
 const CardWrap = styled.div`
   margin: 0 auto;
 `;
@@ -33,9 +43,9 @@ class ConsView extends Component {
 
   render() {
     return (
-      <div>
+      <PageWrapper>
         <Navbar />
-        <ConsWrapper>
+        <ConsWrap>
           <Grid stackable centered>
             {this.state.cons.map(con => {
               return (
@@ -58,8 +68,8 @@ class ConsView extends Component {
               );
             })}
           </Grid>
-        </ConsWrapper>
-      </div>
+        </ConsWrap>
+      </PageWrapper>
     );
   }
 }

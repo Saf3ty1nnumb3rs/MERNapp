@@ -6,6 +6,7 @@ const NavWrap = styled.div`
   position: fixed;
   top: 0;
   width: 100vw;
+  min-height: 13vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +20,8 @@ const NavWrap = styled.div`
     font-style: normal;
     font-weight: 400;
     font-size: 48px;
-    margin-left: 20px;
+    margin: auto;
+    margin-right: 10vw;
     color: rgb(0, 163, 228);
     text-shadow: 1px 1px #6790a0;
     font-family: 'Audiowide', cursive;
@@ -30,7 +32,7 @@ const NavWrap = styled.div`
     }
   }
   .right-nav {
-    padding-right: 5%;
+    padding-left: 5%;
     text-align: center;
     display: inline-flex;
     white-space: nowrap;
@@ -41,9 +43,7 @@ class Navbar extends Component {
   render() {
     return (
       <NavWrap>
-        <h1>
-        <Link to="/"><span>i</span>CON</Link>
-        </h1>
+       
         <div className="right-nav">
           <div>
             <Link to="/">Home</Link>
@@ -52,6 +52,9 @@ class Navbar extends Component {
             <Link to="/cons">iCONS</Link>
           </div>
         </div>
+        <h1>
+        <Link to="/"><span>i</span>CON</Link>
+        </h1>
       </NavWrap>
     );
   }
