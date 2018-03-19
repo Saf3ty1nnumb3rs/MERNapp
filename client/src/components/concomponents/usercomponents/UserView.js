@@ -15,16 +15,16 @@ const ButtonWrap = styled.div`
 
 const UserWrap = styled.div`
   height: 72vh;
-  margin-top: 100px;
+  margin-top: 120px;
 `;
 
 const EditWrap = styled.div`
   height: 72vh;
-  margin-top: 100px;
+  margin-top: 120px;
 `;
 const DeleteWrap = styled.div`
   height: 72vh;
-  margin-top: 100px;
+  margin-top: 120px;
 `;
 
 class UserView extends Component {

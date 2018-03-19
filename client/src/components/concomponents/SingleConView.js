@@ -161,14 +161,14 @@ class SingleConView extends Component {
                   toggleShowShout={this.toggleShowShout}
                 />
               </Segment>
-              <Container>
+              <ButtonWrap>
                 <Button animated onClick={this.toggleShowShout}>
-                  <Button.Content visible>Shout!</Button.Content>
+                  <Button.Content visible>Shout List!</Button.Content>
                   <Button.Content hidden>
                     <Icon name="comments" />
                   </Button.Content>
                 </Button>
-              </Container>
+              </ButtonWrap>
             </Grid.Column>
           ) : (
             <Grid.Column computer={6} tablet={8} mobile={16}>

@@ -1,6 +1,17 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form, Button, TextArea, Container } from "semantic-ui-react";
+import { Form, Button, TextArea, Container, Icon } from "semantic-ui-react";
+import styled from "styled-components"
+
+
+const FormWrap = styled.div`
+
+
+`
+const ButtonWrap = styled.div`
+  text-align: center;
+  margin-top: 10px;
+`;
 
 class CreateShoutForm extends Component {
   state = {
@@ -33,7 +44,7 @@ class CreateShoutForm extends Component {
 
   render() {
     return (
-      <Container>
+      <FormWrap>
         <Form onSubmit={this.handleSubmit}>
           
           <Form.Input
@@ -53,9 +64,16 @@ class CreateShoutForm extends Component {
             value={this.state.msg}
           />
 
-          <Button color="green" type="submit">+ Add Shout</Button>
+          <ButtonWrap>
+                <Button animated color="green" onClick={this.toggleShowShout}>
+                  <Button.Content visible>Shout!</Button.Content>
+                  <Button.Content hidden>
+                    <Icon name="comments" />
+                  </Button.Content>
+                </Button>
+              </ButtonWrap>
         </Form>
-     </Container>
+     </FormWrap>
     );
   }
 }

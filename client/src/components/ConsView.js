@@ -7,9 +7,10 @@ import styled from "styled-components";
 
 const PageWrapper = styled.div`
   margin: 0 auto;
-  background-image: url("https://dragonconeternalmembers.files.wordpress.com/2016/07/22-1-tile.jpg");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #E8543C;
   height: 101vh;
   width: 100vw;
 `;
@@ -20,7 +21,15 @@ padding-top: 150px;
 
 `
 const CardWrap = styled.div`
-  margin: 0 auto;
+  margin: 0;
+  a {
+    color: #40403F; 
+    box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.4);
+    img{
+      border-radius: 4px;
+      
+    }
+  }
 `;
 
 class ConsView extends Component {
@@ -51,7 +60,7 @@ class ConsView extends Component {
               return (
                 <Grid.Column key={con._id + "id"} width={5}>
                   <CardWrap>
-                    <Card centered>
+                    <Card id="card" raised centered>
                       <Link
                         key={con._id}
                         to={`/cons/${con._id}`}

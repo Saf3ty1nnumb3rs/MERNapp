@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const ImageWrap = styled.div`
   max-width: 360px;
-  margin: 0 auto;
+  margin: 0;
   img {
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.3);
   }
