@@ -12,9 +12,10 @@ import styled from "styled-components";
 const PageWrap = styled.div`
   margin: 0 auto;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
-  background-color: #E8543C;
+  background-color: #FFFFFF;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 100vh;
 `;
 
 const ConWrapper = styled.div`
@@ -33,8 +34,9 @@ const ScrollWrapper = styled.div`
   height: 72vh;
   margin-right: 10px;
   margin-top: 110px;
-  
   overflow-y: auto;
+  border: 2px solid rgba(212,212,208,.9)
+  border-radius: 4px;
 `;
 const FormWrap = styled.div`
   margin-top: 110px;

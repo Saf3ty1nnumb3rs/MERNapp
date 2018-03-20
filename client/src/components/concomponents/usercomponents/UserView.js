@@ -15,7 +15,8 @@ const ButtonWrap = styled.div`
 
 const UserWrap = styled.div`
   height: 72vh;
-  margin-top: 120px;
+  width: 55vw;
+  margin-top: 130px;
 `;
 
 const EditWrap = styled.div`

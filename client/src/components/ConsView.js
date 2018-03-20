@@ -10,7 +10,7 @@ const PageWrapper = styled.div`
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: #E8543C;
+  background-color: #FFFFFF;
   height: 101vh;
   width: 100vw;
 `;

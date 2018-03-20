@@ -42,7 +42,7 @@ const NavLinkWrap = styled.div`
   text-align: center;
   display: inline-flex;
   white-space: nowrap;
-  font-size: 20px;
+  font-size: 28px;
   .inner-nav {
     padding: 0 3vw;
     span {
