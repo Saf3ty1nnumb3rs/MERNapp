@@ -30,7 +30,6 @@ class ShoutComponent extends Component {
   render() {
     return (
       <Form>
-        <br />
         <Input
           focus
           size="small"

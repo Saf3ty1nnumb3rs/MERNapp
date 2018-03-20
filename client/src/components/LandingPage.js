@@ -8,7 +8,7 @@ background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02
 background-color: #FFD404;
 min-height: 100vh;
 min-width: 120vw;
-height: auto;
+height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
 position: relative;
