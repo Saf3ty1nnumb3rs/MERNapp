@@ -40,6 +40,9 @@ router.post("/", (req, res) => {
         favCon: req.body.favCon,
         about: req.body.about
       });
+      if (!newUser.img) {
+        newUser.img = 'https://randomuser.me/api/portraits/men/69.jpg'
+      };
       cons.users.push(newUser);
       return cons.save();
     })
