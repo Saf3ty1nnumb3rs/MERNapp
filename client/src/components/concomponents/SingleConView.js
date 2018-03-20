@@ -121,7 +121,7 @@ class SingleConView extends Component {
           {this.state.showAddUser ? (
             <Grid.Column computer={4} tablet={8} mobile={16}>
               <FormWrap>
-                <Segment raised>
+                <Segment raised inverted>
                   <CreateUserForm
                     getAllUsers={this.getAllUsers}
                     cons={this.props.cons}
@@ -171,7 +171,7 @@ class SingleConView extends Component {
 
           {this.state.showShout ? (
             <Grid.Column computer={6} tablet={8} mobile={16}>
-              <Segment raised>
+              <Segment inverted raised>
                 <h1>Shout It Out!!!</h1>
                 <CreateShoutForm
                   getAllShouts={this.getAllShouts}

@@ -21,11 +21,11 @@ const UserWrap = styled.div`
 
 const EditWrap = styled.div`
   height: 72vh;
-  margin-top: 120px;
+  margin-top: 130px;
 `;
 const DeleteWrap = styled.div`
   height: 72vh;
-  margin-top: 120px;
+  margin-top: 130px;
 `;
 
 class UserView extends Component {

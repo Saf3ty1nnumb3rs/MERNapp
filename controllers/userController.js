@@ -39,7 +39,7 @@ router.post("/", (req, res) => {
         userSince: req.body.userSince,
         favCon: req.body.favCon,
         about: req.body.about
-      });
+      })
       if (!newUser.img) {
         newUser.img = 'https://randomuser.me/api/portraits/men/69.jpg'
       };
