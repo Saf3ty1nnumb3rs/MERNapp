@@ -16,7 +16,7 @@ const ImageWrap = styled.div`
 class ConComponent extends Component {
   render() {
     return (
-      <Segment id="bgcolor">
+      <Segment className="bgcolor">
         <Container textAlign="center">
           <h2>{this.props.con.name}</h2>
           <ImageWrap>

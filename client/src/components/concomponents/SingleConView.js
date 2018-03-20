@@ -12,31 +12,35 @@ import styled from "styled-components";
 const PageWrap = styled.div`
   margin: 0 auto;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh;
 `;
 
 const ConWrapper = styled.div`
-#bgcolor {
-background-color: rgba(212,212,208,.9) ;
-}
+  .bgcolor {
+    background-color: rgba(212, 212, 208, 0.9);
+  }
   height: 72 vh;
   margin-left: 10px;
   margin-top: 110px;
 `;
 
 const ScrollWrapper = styled.div`
-#bgcolor {
+.bgcolor {
   background-color: rgba(212,212,208,.9);
 }
   height: 72vh;
   margin-right: 10px;
   margin-top: 110px;
-  overflow-y: auto;
   border: 2px solid rgba(212,212,208,.9)
   border-radius: 4px;
+`;
+
+const BorderWrapper = styled.div`
+  height: 69vh;
+  overflow-y: auto;
 `;
 const FormWrap = styled.div`
   margin-top: 110px;
@@ -143,13 +147,15 @@ class SingleConView extends Component {
           ) : (
             <Grid.Column computer={4} tablet={8} mobile={10}>
               <ScrollWrapper>
-                <Segment id="bgcolor">
-                  <UserListComponent
-                    getAllUsers={this.getAllUsers}
-                    users={this.state.users}
-                    cons={this.props.cons}
-                    consId={this.state.con._id}
-                  />
+                <Segment className="bgcolor">
+                  <BorderWrapper>
+                    <UserListComponent
+                      getAllUsers={this.getAllUsers}
+                      users={this.state.users}
+                      cons={this.props.cons}
+                      consId={this.state.con._id}
+                    />
+                  </BorderWrapper>
                 </Segment>
               </ScrollWrapper>
               <ButtonWrap>
@@ -186,6 +192,8 @@ class SingleConView extends Component {
           ) : (
             <Grid.Column computer={6} tablet={8} mobile={16}>
               <ScrollWrapper>
+                <Segment className="bgcolor">
+                <BorderWrapper>
                 <ShoutListComponent
                   shouts={this.state.shouts}
                   cons={this.props.cons}
@@ -193,9 +201,11 @@ class SingleConView extends Component {
                   getAllShouts={this.getAllShouts}
                   handleShoutChange={this.handleShoutChange}
                 />
+                </BorderWrapper>
+                </Segment>
               </ScrollWrapper>
               <ButtonWrap>
-                <Button animated onClick={this.toggleShowShout}>
+                <Button animated color="green" onClick={this.toggleShowShout}>
                   <Button.Content visible>Shout!</Button.Content>
                   <Button.Content hidden>
                     <Icon name="comments" />
