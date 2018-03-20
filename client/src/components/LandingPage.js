@@ -6,7 +6,8 @@ import styled from "styled-components"
 const MainWrap = styled.div`
 background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png');
 background-color: #FFD404;
-min-height: 100vh;
+background-attachment: fixed;
+min-height: 120vh;
 min-width: 120vw;
 height: 100vh;
 background-size: cover;

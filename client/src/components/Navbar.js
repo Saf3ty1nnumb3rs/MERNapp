@@ -26,7 +26,7 @@ const NavWrap = styled.div`
     font-weight: 400;
     font-size: 48px;
     margin: auto;
-    margin-right: 10vw;
+    margin-right: 9vw;
     padding-left: 1vw;
     text-shadow: 8px 2px #40403f;
     font-family: "Audiowide", cursive;
@@ -38,13 +38,12 @@ const NavWrap = styled.div`
   }
 `;
 const NavLinkWrap = styled.div`
-  padding-left: 5%;
   text-align: center;
   display: inline-flex;
   white-space: nowrap;
   font-size: 28px;
   .inner-nav {
-    padding: 0 3vw;
+    padding: 0 2vw;
     span {
       font-family: "Courgette", cursive;
     }
