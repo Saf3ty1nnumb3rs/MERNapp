@@ -18,16 +18,17 @@ height: 100%;
 margin: 0 auto;
 h1 {
     font-family: 'Courgette', cursive;
-    margin-left: 15vw;
-    padding-top: 16vh;
+    width: 100vw;
+    padding-top: 14vh;
 }
 `;
 const LinkWrap = styled.div`
 h1 {
     font-style: normal;
+    letter-spacing: 6vw;
+    width: 100w;
     font-weight: 400;
-    margin-left: 10vw;
-    padding-top: 3vh;
+    padding-top: 1vh;
     color: #E8543C;
     position: absolute;
     font-family: 'Audiowide', cursive;
@@ -49,18 +50,19 @@ p {
 }
 h1 {
     font-style: normal;
+    letter-spacing: 6vw;
     font-weight: 400;
-    margin-left: 15vw;
+    margin-left: 4vw;
     margin-bottom: 0;
-    padding-top: 7vh;
+    padding-top: 4vh;
     color: #40403F;
-    position: relative; 
+    /* position: relative;  */
     font-family: 'Audiowide', cursive;
-    font-size: 35vw;
+    font-size: 38vw;
     z-index: 3;
     span {
       font-family: 'Courgette', cursive;
-      font-size: 35vw;
+      font-size: 38vw;
     };
 }
 `
@@ -74,7 +76,7 @@ class LandingPage extends Component {
                 <Link to="/cons"><h1> <span>i</span>Con</h1> </Link>
                 </LinkWrap>
                 <SecondWrap><h1> <span>i</span>Con</h1> 
-                <p>* the place to meet before you meet *</p></SecondWrap>
+                <p>* meet before you meet *</p></SecondWrap>
                 
             </MainWrap>
         );

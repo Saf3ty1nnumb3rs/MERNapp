@@ -3,14 +3,15 @@ import { Container, Segment, Image, Grid } from "semantic-ui-react";
 import styled from "styled-components";
 
 const SingleUserWrap = styled.div`
-  margin: 10px;
+  margin: 10px auto;
+  min-width: 220px;
 `;
 
 const ImageWrap = styled.div`
 
 
   max-width: 240px;
-  min-width: 120px;
+  min-width: 180px;
   height: auto;
   margin: 8px;
   img {

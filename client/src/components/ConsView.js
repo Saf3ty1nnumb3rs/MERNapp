@@ -9,25 +9,22 @@ const PageWrapper = styled.div`
   margin: 0 auto;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Des_polyedriques.svg/1000px-Des_polyedriques.svg.png");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #FFFFFF;
+  background-repeat: repeat;
+  background-color: #ffffff;
   height: 101vh;
   width: 100vw;
 `;
 
 const ConsWrap = styled.div`
-
-padding-top: 150px;
-
-`
+  padding-top: 150px;
+`;
 const CardWrap = styled.div`
   margin: 0;
   a {
-    color: #40403F; 
+    color: #40403f;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.4);
-    img{
+    img {
       border-radius: 4px;
-      
     }
   }
 `;

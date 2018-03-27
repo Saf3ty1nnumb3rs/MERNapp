@@ -38,7 +38,7 @@ class CreateUserForm extends Component {
   render() {
     return (
       <Form onSubmit={this.handleSubmit}>
-        <Segment.Group inverted>
+        <Segment.Group >
           <Segment>
             <Input
               name="name"
