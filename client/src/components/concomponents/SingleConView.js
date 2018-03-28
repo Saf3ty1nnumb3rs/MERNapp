@@ -171,7 +171,7 @@ class SingleConView extends Component {
 
           {this.state.showShout ? (
             <Grid.Column computer={6} tablet={8} mobile={16}>
-              <Segment inverted raised>
+              <Segment raised>
                 <h1>Shout It Out!!!</h1>
                 <CreateShoutForm
                   getAllShouts={this.getAllShouts}
