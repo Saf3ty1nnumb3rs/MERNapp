@@ -65,7 +65,7 @@ class CreateShoutForm extends Component {
           />
 
           <ButtonWrap>
-                <Button animated color="green" onClick={this.toggleShowShout}>
+                <Button animated color="green" type="submit">
                   <Button.Content visible>Shout!</Button.Content>
                   <Button.Content hidden>
                     <Icon name="comments" />
