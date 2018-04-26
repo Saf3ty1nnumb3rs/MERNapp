@@ -14,9 +14,15 @@ class ShoutComponent extends Component {
     );
     await this.props.getAllShouts();
   };
+
+
+  
   handleChange = event => {
     this.props.handleShoutChange(event, this.props.shouts._id);
   };
+
+
+
   updateShout = async shout => {
     await axios.patch(
       `/api/cons/${this.props.consId}/shouts/${this.props.shouts._id}`,

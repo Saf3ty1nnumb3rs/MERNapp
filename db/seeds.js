@@ -99,7 +99,7 @@ const dragon = new Con ({
     theme: 'Cosplay, Comic, and Sci-Fi Convention',
     location: 'Atlanta, GA',
     date: 'March 14, 2018',
-    img: 'https://pbs.twimg.com/profile_images/948443217481076736/DwJIudRD_400x400.jpg',
+    img: 'http://cdn.atlantamagazine.com/wp-content/uploads/sites/12/2015/09/DragonCon.2015.Costumes_MattWalljasper_OneUseOnly_007.jpg',
     users:[sara, murph, cam],
     shouts:[shout3, shout8]
 })

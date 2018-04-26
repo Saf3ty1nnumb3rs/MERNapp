@@ -68,6 +68,7 @@ class UserView extends Component {
     this.setState({ users: res.data });
   };
 
+
   handleChange = event => {
     const name = event.target.name;
     const newState = { ...this.state.user };
@@ -75,6 +76,7 @@ class UserView extends Component {
     this.setState({ user: newState });
   };
 
+  
   handleSubmit = async event => {
     event.preventDefault();
     const consId = this.props.match.params.consId;
