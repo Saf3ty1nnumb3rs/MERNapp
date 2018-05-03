@@ -3,7 +3,8 @@ const router = express.Router()
 
 
 router.get('/', (req, res) => {
-    res.redirect('/')
+    console.log(res)
+    res.render('../src/components/LandingPage')
 })
 
 
