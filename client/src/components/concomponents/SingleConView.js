@@ -6,7 +6,7 @@ import ConComponent from "./ConComponent";
 import CreateUserForm from "./usercomponents/CreateUserForm";
 import CreateShoutForm from "./shoutcomponents/CreateShoutForm";
 import Navbar from "../Navbar";
-import { Grid, Button, Segment, Icon, Container } from "semantic-ui-react";
+import { Grid, Button, Segment, Icon } from "semantic-ui-react";
 import styled from "styled-components";
 
 const PageWrap = styled.div`

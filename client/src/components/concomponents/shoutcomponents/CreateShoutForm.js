@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Form, Button, TextArea, Container, Icon } from "semantic-ui-react";
+import { Form, Button, TextArea, Icon } from "semantic-ui-react";
 import styled from "styled-components"
 
 

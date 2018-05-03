@@ -30,7 +30,7 @@ const conController = require('./controllers/conController')
 const shoutController = require('./controllers/shoutController')
 const userController = require('./controllers/userController')
 
-app.use('/', index)
+app.use('/home', index)
 app.use('/api/cons', conController)
 app.use('/api/cons/:consId/users', userController)
 app.use('/api/cons/:consId/shouts', shoutController)

@@ -61,7 +61,7 @@ class Navbar extends Component {
       <NavWrap>
         <NavLinkWrap>
           <div className="inner-nav">
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </div>
           <div className="inner-nav">
             <Link to="/cons">
@@ -69,7 +69,7 @@ class Navbar extends Component {
             </Link>
           </div>
         </NavLinkWrap>
-        <Link to="/">
+        <Link to="/home">
           <h1>
             <span>i</span>CON
           </h1>
